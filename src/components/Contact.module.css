@@ -1,0 +1,92 @@
+.section {
+    background: var(--avant-charcoal-light);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: start;
+}
+
+.left {
+    padding-top: var(--space-md);
+}
+
+.calendly {
+    margin-top: var(--space-xl);
+    padding: var(--space-md);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--glass-border);
+    background: var(--avant-charcoal);
+}
+
+.calendlyLabel {
+    font-size: var(--fs-small);
+    color: var(--avant-ivory-muted);
+    margin-bottom: var(--space-sm);
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-top: var(--space-xl);
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--avant-ivory-muted);
+    font-size: var(--fs-small);
+}
+
+.detailIcon {
+    font-size: 1.2rem;
+}
+
+/* Form */
+.form {
+    background: var(--avant-charcoal);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    padding: var(--space-lg);
+}
+
+.formTitle {
+    font-size: var(--fs-h3);
+    margin-bottom: var(--space-lg);
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+}
+
+.field {
+    margin-bottom: var(--space-md);
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.error {
+    margin-top: var(--space-sm);
+    font-size: var(--fs-small);
+    color: var(--avant-error);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,97 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: var(--nav-height);
+}
+
+.bgGlow {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-hero);
+    pointer-events: none;
+}
+
+.grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: var(--space-3xl) 0 var(--space-2xl);
+}
+
+.headline {
+    font-size: var(--fs-hero);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-tight);
+    margin-bottom: var(--space-md);
+    animation: fadeInUp var(--duration-slow) var(--ease-out) both;
+}
+
+.gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subheadline {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    color: var(--avant-ivory-muted);
+    max-width: 52ch;
+    margin-bottom: var(--space-xl);
+    animation: fadeInUp var(--duration-slow) var(--ease-out) 0.15s both;
+}
+
+.ctas {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    animation: fadeInUp var(--duration-slow) var(--ease-out) 0.3s both;
+}
+
+.trust {
+    margin-top: var(--space-2xl);
+    animation: fadeIn var(--duration-slow) var(--ease-out) 0.6s both;
+}
+
+.trustDivider {
+    width: 40px;
+    height: 1px;
+    background: var(--avant-slate);
+    margin-bottom: var(--space-sm);
+}
+
+.trustText {
+    font-size: var(--fs-small);
+    color: var(--avant-slate);
+    letter-spacing: var(--ls-wide);
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: var(--space-2xl) 0 var(--space-xl);
+    }
+
+    .ctas {
+        flex-direction: column;
+    }
+
+    .ctas .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
