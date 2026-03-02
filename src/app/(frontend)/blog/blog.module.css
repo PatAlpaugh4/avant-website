@@ -1,0 +1,23 @@
+.blogSection {
+    min-height: 60vh;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.empty {
+    text-align: center;
+    padding: var(--space-3xl) 0;
+    color: var(--ls-slate);
+    font-size: var(--fs-body);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

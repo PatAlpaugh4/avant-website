@@ -1,5 +1,5 @@
 .section {
-    background: var(--avant-charcoal-light);
+    background: var(--ls-charcoal-light);
 }
 
 .steps {
@@ -14,12 +14,12 @@
     padding: var(--space-lg);
     border-radius: var(--border-radius);
     border: 1px solid var(--glass-border);
-    background: var(--avant-charcoal);
+    background: var(--ls-charcoal);
     transition: all var(--duration-normal) var(--ease-out);
 }
 
 .step:hover {
-    border-color: rgba(201, 168, 76, 0.2);
+    border-color: rgba(74, 144, 217, 0.2);
     transform: translateY(-4px);
 }
 
@@ -28,7 +28,7 @@
     font-family: var(--font-display);
     font-size: var(--fs-h1);
     font-weight: var(--fw-bold);
-    background: var(--gradient-gold);
+    background: var(--gradient-accent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -43,7 +43,7 @@
 
 .stepDesc {
     font-size: var(--fs-small);
-    color: var(--avant-ivory-muted);
+    color: var(--ls-ivory-muted);
     margin-bottom: var(--space-md);
 }
 
@@ -56,7 +56,7 @@
 }
 
 .outcomeIcon {
-    color: var(--avant-gold);
+    color: var(--ls-accent);
     font-weight: var(--fw-bold);
     flex-shrink: 0;
 }
@@ -65,7 +65,7 @@
     font-family: var(--font-display);
     font-size: var(--fs-small);
     font-weight: var(--fw-medium);
-    color: var(--avant-gold);
+    color: var(--ls-accent);
 }
 
 @media (max-width: 768px) {

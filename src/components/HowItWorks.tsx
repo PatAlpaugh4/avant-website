@@ -1,3 +1,6 @@
+"use client";
+
+import { useReveal } from "@/hooks/useReveal";
 import styles from "./HowItWorks.module.css";
 
 const STEPS = [
@@ -25,9 +28,11 @@ const STEPS = [
 ];
 
 export default function HowItWorks() {
+    const { ref, revealed } = useReveal();
+
     return (
         <section className={`section ${styles.section}`} id="how-it-works">
-            <div className="container">
+            <div className={`container reveal ${revealed ? "revealed" : ""}`} ref={ref}>
                 <p className="section-label">How It Works</p>
                 <h2 className="section-title">Three steps. Real results.</h2>
                 <p className="section-subtitle">

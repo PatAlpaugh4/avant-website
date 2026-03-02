@@ -1,3 +1,6 @@
+"use client";
+
+import { useReveal } from "@/hooks/useReveal";
 import styles from "./Differentiators.module.css";
 
 const ATTRIBUTES = [
@@ -10,23 +13,25 @@ const ATTRIBUTES = [
 ];
 
 export default function Differentiators() {
+    const { ref, revealed } = useReveal();
+
     return (
         <section className={`section ${styles.section}`}>
-            <div className="container">
-                <p className="section-label">Why Avant</p>
+            <div className={`container reveal ${revealed ? "revealed" : ""}`} ref={ref}>
+                <p className="section-label">Why Landship</p>
                 <h2 className="section-title">
                     Built for businesses that build Ontario.
                 </h2>
                 <p className="section-subtitle">
-                    Avant means &ldquo;forward&rdquo; — the lead navigator who steered
-                    the canoe through rapids. We take the same approach: practical,
-                    skilled, and always at the front.
+                    Landship — a vessel built for the terrain ahead. We don&apos;t
+                    theorize from the sidelines; we build the craft and steer it
+                    with you.
                 </p>
 
                 <div className={styles.table}>
                     <div className={styles.tableHeader}>
                         <span />
-                        <span className={styles.headerUs}>Avant</span>
+                        <span className={styles.headerUs}>Landship</span>
                         <span className={styles.headerThem}>Big Firms</span>
                     </div>
                     {ATTRIBUTES.map((attr) => (

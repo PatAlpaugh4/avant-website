@@ -1,3 +1,6 @@
+"use client";
+
+import { useReveal } from "@/hooks/useReveal";
 import styles from "./Problem.module.css";
 
 const STATS = [
@@ -7,9 +10,11 @@ const STATS = [
 ];
 
 export default function Problem() {
+    const { ref, revealed } = useReveal();
+
     return (
         <section className={`section ${styles.problem}`} id="problem">
-            <div className="container">
+            <div className={`container reveal ${revealed ? "revealed" : ""}`} ref={ref}>
                 <p className="section-label">The Gap</p>
                 <h2 className="section-title">
                     Your team is paying for AI they&apos;re not using.

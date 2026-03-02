@@ -42,7 +42,7 @@
 }
 
 .gold {
-    background: var(--gradient-gold);
+    background: var(--gradient-accent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -50,7 +50,7 @@
 
 .subheadline {
     font-size: clamp(1.1rem, 2vw, 1.35rem);
-    color: var(--avant-ivory-muted);
+    color: var(--ls-ivory-muted);
     max-width: 52ch;
     margin-bottom: var(--space-xl);
     animation: fadeInUp var(--duration-slow) var(--ease-out) 0.15s both;
@@ -71,13 +71,13 @@
 .trustDivider {
     width: 40px;
     height: 1px;
-    background: var(--avant-slate);
+    background: var(--ls-slate);
     margin-bottom: var(--space-sm);
 }
 
 .trustText {
     font-size: var(--fs-small);
-    color: var(--avant-slate);
+    color: var(--ls-slate);
     letter-spacing: var(--ls-wide);
 }
 

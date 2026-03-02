@@ -1,5 +1,5 @@
 .services {
-    background: var(--avant-charcoal);
+    background: var(--ls-charcoal);
 }
 
 .ladder {
@@ -32,15 +32,15 @@
     font-family: var(--font-display);
     font-size: var(--fs-small);
     font-weight: var(--fw-bold);
-    color: var(--avant-charcoal);
-    background: var(--gradient-gold);
+    color: var(--ls-charcoal);
+    background: var(--gradient-accent);
     flex-shrink: 0;
 }
 
 .stageLine {
     width: 2px;
     flex: 1;
-    background: linear-gradient(to bottom, var(--avant-gold-dim), var(--glass-border));
+    background: linear-gradient(to bottom, var(--ls-accent-dim), var(--glass-border));
     min-height: 20px;
 }
 
@@ -62,8 +62,8 @@
     font-weight: var(--fw-semibold);
     letter-spacing: var(--ls-widest);
     text-transform: uppercase;
-    color: var(--avant-gold);
-    background: rgba(201, 168, 76, 0.1);
+    color: var(--ls-accent);
+    background: rgba(74, 144, 217, 0.1);
     padding: 0.3rem 0.8rem;
     border-radius: 30px;
     flex-shrink: 0;
@@ -85,20 +85,20 @@
 .stagePrice {
     font-family: var(--font-display);
     font-weight: var(--fw-semibold);
-    color: var(--avant-gold);
+    color: var(--ls-accent);
 }
 
 .stageDot {
-    color: var(--avant-slate);
+    color: var(--ls-slate);
 }
 
 .stageTimeline {
-    color: var(--avant-ivory-muted);
+    color: var(--ls-ivory-muted);
     font-size: var(--fs-small);
 }
 
 .stageDesc {
-    color: var(--avant-ivory-muted);
+    color: var(--ls-ivory-muted);
     margin-bottom: var(--space-md);
 }
 
@@ -114,7 +114,7 @@
 .details li {
     padding-left: 1.5rem;
     position: relative;
-    color: var(--avant-ivory-muted);
+    color: var(--ls-ivory-muted);
     font-size: var(--fs-small);
 }
 
@@ -122,7 +122,7 @@
     content: "✓";
     position: absolute;
     left: 0;
-    color: var(--avant-gold);
+    color: var(--ls-accent);
     font-weight: var(--fw-bold);
 }
 
@@ -137,22 +137,22 @@
     display: block;
     width: 100%;
     text-align: left;
-    background: var(--avant-charcoal);
+    background: var(--ls-charcoal);
     border: 1px solid var(--glass-border);
     border-radius: var(--border-radius-sm);
     padding: var(--space-sm) var(--space-md);
     cursor: pointer;
     transition: all var(--duration-fast) var(--ease-out);
     font-family: var(--font-body);
-    color: var(--avant-ivory);
+    color: var(--ls-ivory);
 }
 
 .sprint:hover {
-    border-color: rgba(201, 168, 76, 0.2);
+    border-color: rgba(74, 144, 217, 0.2);
 }
 
 .sprintOpen {
-    border-color: var(--avant-gold-dim);
+    border-color: var(--ls-accent-dim);
 }
 
 .sprintHeader {
@@ -168,20 +168,20 @@
 .sprintPrice {
     font-family: var(--font-display);
     font-weight: var(--fw-semibold);
-    color: var(--avant-gold);
+    color: var(--ls-accent);
     font-size: var(--fs-small);
 }
 
 .sprintDesc {
     margin-top: var(--space-xs);
     font-size: var(--fs-small);
-    color: var(--avant-ivory-muted);
+    color: var(--ls-ivory-muted);
     line-height: var(--lh-body);
 }
 
 .bundles {
     font-size: var(--fs-small);
-    color: var(--avant-slate);
+    color: var(--ls-slate);
     margin-top: var(--space-xs);
 }
 

@@ -28,7 +28,7 @@
     font-size: 1.5rem;
     font-weight: var(--fw-bold);
     letter-spacing: var(--ls-widest);
-    color: var(--avant-white) !important;
+    color: var(--ls-white) !important;
     text-decoration: none;
 }
 
@@ -44,7 +44,7 @@
     font-weight: var(--fw-medium);
     letter-spacing: var(--ls-wide);
     text-transform: uppercase;
-    color: var(--avant-ivory-muted);
+    color: var(--ls-ivory-muted);
     text-decoration: none;
     transition: color var(--duration-fast) var(--ease-out);
     position: relative;
@@ -57,16 +57,24 @@
     left: 0;
     width: 0;
     height: 1px;
-    background: var(--avant-gold);
+    background: var(--ls-accent);
     transition: width var(--duration-normal) var(--ease-out);
 }
 
 .link:hover {
-    color: var(--avant-white);
+    color: var(--ls-white);
 }
 
 .link:hover::after {
     width: 100%;
+}
+
+.linkActive {
+    color: var(--ls-accent) !important;
+}
+
+.linkActive::after {
+    width: 100% !important;
 }
 
 .cta {
@@ -89,7 +97,7 @@
     display: block;
     width: 24px;
     height: 2px;
-    background: var(--avant-ivory);
+    background: var(--ls-ivory);
     transition: all var(--duration-normal) var(--ease-out);
     border-radius: 2px;
 }
@@ -113,7 +121,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--avant-charcoal);
+    background: var(--ls-charcoal);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,12 +137,12 @@
     font-weight: var(--fw-medium);
     letter-spacing: var(--ls-wide);
     text-transform: uppercase;
-    color: var(--avant-ivory);
+    color: var(--ls-ivory);
     text-decoration: none;
 }
 
 .mobileLink:hover {
-    color: var(--avant-gold);
+    color: var(--ls-accent);
 }
 
 @media (max-width: 768px) {

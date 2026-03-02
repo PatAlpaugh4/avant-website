@@ -78,11 +78,11 @@ export default function Contact() {
 
                         <div className={styles.details}>
                             <div className={styles.detail}>
-                                <span className={styles.detailIcon}>📧</span>
-                                <span>hello@avantai.ca</span>
+                                <span className={styles.detailIcon}>@</span>
+                                <span>hello@landship.ca</span>
                             </div>
                             <div className={styles.detail}>
-                                <span className={styles.detailIcon}>📍</span>
+                                <span className={styles.detailIcon}>•</span>
                                 <span>Ontario, Canada</span>
                             </div>
                         </div>
@@ -200,7 +200,7 @@ export default function Contact() {
                             {status === "sending"
                                 ? "Sending..."
                                 : status === "sent"
-                                    ? "✓ Sent! We'll be in touch."
+                                    ? "Sent! We'll be in touch."
                                     : "Send Message"}
                         </button>
 

@@ -1,5 +1,5 @@
 .problem {
-    background: var(--avant-charcoal-light);
+    background: var(--ls-charcoal-light);
 }
 
 .stats {
@@ -19,7 +19,7 @@
     font-family: var(--font-display);
     font-size: var(--fs-h1);
     font-weight: var(--fw-bold);
-    background: var(--gradient-gold);
+    background: var(--gradient-accent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -28,7 +28,7 @@
 
 .statLabel {
     font-size: var(--fs-small);
-    color: var(--avant-ivory-muted);
+    color: var(--ls-ivory-muted);
     line-height: 1.5;
 }
 
@@ -43,12 +43,12 @@
     padding: var(--space-lg);
     border-radius: var(--border-radius);
     border: 1px solid var(--glass-border);
-    background: var(--avant-charcoal);
+    background: var(--ls-charcoal);
 }
 
 .contrastCardGold {
-    border-color: rgba(201, 168, 76, 0.3);
-    background: linear-gradient(135deg, rgba(201, 168, 76, 0.05), transparent);
+    border-color: rgba(74, 144, 217, 0.3);
+    background: linear-gradient(135deg, rgba(74, 144, 217, 0.05), transparent);
 }
 
 .contrastTitle {
@@ -58,7 +58,7 @@
 }
 
 .contrastCardGold .contrastTitle {
-    color: var(--avant-gold);
+    color: var(--ls-accent);
 }
 
 .contrastList {
@@ -70,7 +70,7 @@
 
 .contrastList li {
     font-size: var(--fs-body);
-    color: var(--avant-ivory-muted);
+    color: var(--ls-ivory-muted);
     padding-left: 1.5rem;
     position: relative;
 }
@@ -79,13 +79,13 @@
     content: "×";
     position: absolute;
     left: 0;
-    color: var(--avant-slate);
+    color: var(--ls-slate);
     font-weight: var(--fw-bold);
 }
 
 .contrastCardGold .contrastList li::before {
     content: "→";
-    color: var(--avant-gold);
+    color: var(--ls-accent);
 }
 
 @media (max-width: 768px) {

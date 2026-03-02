@@ -1,38 +1,41 @@
+"use client";
+
+import { useReveal } from "@/hooks/useReveal";
 import styles from "./Industries.module.css";
 
 const INDUSTRIES = [
     {
-        icon: "⚖️",
+        icon: "LF",
         name: "Law Firms",
         sprint: "Client Intake Accelerator",
         desc: "Automate document collection, follow-ups, and conflict checks. Cut intake time by 70%.",
     },
     {
-        icon: "📊",
+        icon: "AF",
         name: "Accounting Firms",
         sprint: "AI Knowledge Base",
         desc: "Instant access to tax codes, procedures, and client histories. New hires productive in days, not weeks.",
     },
     {
-        icon: "🏥",
+        icon: "HC",
         name: "Healthcare Clinics",
         sprint: "24/7 Support Agent",
         desc: "Handle appointment inquiries, FAQs, and triage around the clock without adding staff.",
     },
     {
-        icon: "🏗️",
+        icon: "MF",
         name: "Manufacturing",
         sprint: "HR & Onboarding Automation",
         desc: "Streamline hiring paperwork, safety training, and equipment requests. Onboard in 2 days, not 2 weeks.",
     },
     {
-        icon: "💰",
+        icon: "FA",
         name: "Financial Advisory",
         sprint: "CRM Intelligence Upgrade",
         desc: "AI lead scoring, automated follow-ups, and deal predictions. 25–30% conversion improvement.",
     },
     {
-        icon: "🔧",
+        icon: "EC",
         name: "Engineering & Consulting",
         sprint: "AI Quick-Win Workshop",
         desc: "Get your billable team using AI for proposals, reports, and project scoping in one session.",

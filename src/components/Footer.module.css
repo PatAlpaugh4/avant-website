@@ -23,7 +23,7 @@
     font-size: 1.8rem;
     font-weight: var(--fw-bold);
     letter-spacing: var(--ls-widest);
-    color: var(--avant-white);
+    color: var(--ls-white);
 }
 
 .tagline {
@@ -31,7 +31,7 @@
     font-size: var(--fs-small);
     font-weight: var(--fw-light);
     letter-spacing: var(--ls-widest);
-    color: var(--avant-gold);
+    color: var(--ls-accent);
     text-transform: uppercase;
 }
 
@@ -46,14 +46,14 @@
     font-family: var(--font-display);
     font-size: var(--fs-small);
     font-weight: var(--fw-medium);
-    color: var(--avant-ivory-muted);
+    color: var(--ls-ivory-muted);
     text-decoration: none;
     letter-spacing: var(--ls-wide);
     transition: color var(--duration-fast) var(--ease-out);
 }
 
 .links a:hover {
-    color: var(--avant-gold);
+    color: var(--ls-accent);
 }
 
 .bottom {
@@ -67,7 +67,7 @@
 .copy,
 .location {
     font-size: var(--fs-xs);
-    color: var(--avant-slate);
+    color: var(--ls-slate);
 }
 
 @media (max-width: 768px) {

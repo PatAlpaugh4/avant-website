@@ -1,5 +1,5 @@
 .section {
-    background: var(--avant-charcoal);
+    background: var(--ls-charcoal);
 }
 
 .table {
@@ -14,7 +14,7 @@
     grid-template-columns: 1.5fr 1fr 1fr;
     gap: var(--space-sm);
     padding: var(--space-md) var(--space-lg);
-    background: var(--avant-charcoal-mid);
+    background: var(--ls-charcoal-mid);
     font-family: var(--font-display);
     font-size: var(--fs-xs);
     font-weight: var(--fw-semibold);
@@ -23,11 +23,11 @@
 }
 
 .headerUs {
-    color: var(--avant-gold);
+    color: var(--ls-accent);
 }
 
 .headerThem {
-    color: var(--avant-slate);
+    color: var(--ls-slate);
 }
 
 .tableRow {
@@ -40,21 +40,21 @@
 }
 
 .tableRow:hover {
-    background: rgba(201, 168, 76, 0.03);
+    background: rgba(74, 144, 217, 0.03);
 }
 
 .rowLabel {
     font-weight: var(--fw-medium);
-    color: var(--avant-ivory);
+    color: var(--ls-ivory);
 }
 
 .rowUs {
-    color: var(--avant-gold);
+    color: var(--ls-accent);
     font-weight: var(--fw-medium);
 }
 
 .rowThem {
-    color: var(--avant-slate);
+    color: var(--ls-slate);
 }
 
 @media (max-width: 768px) {
@@ -75,7 +75,7 @@
 
     .rowLabel {
         font-size: var(--fs-small);
-        color: var(--avant-ivory-muted);
+        color: var(--ls-ivory-muted);
         margin-bottom: var(--space-xs);
     }
 }

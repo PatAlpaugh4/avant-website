@@ -1,5 +1,5 @@
 .section {
-    background: var(--avant-charcoal);
+    background: var(--ls-charcoal);
 }
 
 .list {
@@ -19,7 +19,7 @@
     padding: var(--space-md) 0;
     cursor: pointer;
     font-family: var(--font-body);
-    color: var(--avant-ivory);
+    color: var(--ls-ivory);
     transition: all var(--duration-fast) var(--ease-out);
 }
 
@@ -40,7 +40,7 @@
 
 .icon {
     font-size: 1.5rem;
-    color: var(--avant-gold);
+    color: var(--ls-accent);
     flex-shrink: 0;
     line-height: 1;
 }
@@ -48,12 +48,12 @@
 .answer {
     margin-top: var(--space-sm);
     font-size: var(--fs-body);
-    color: var(--avant-ivory-muted);
+    color: var(--ls-ivory-muted);
     line-height: var(--lh-body);
     max-width: 60ch;
     animation: fadeIn var(--duration-fast) var(--ease-out);
 }
 
 .itemOpen .question {
-    color: var(--avant-gold);
+    color: var(--ls-accent);
 }
