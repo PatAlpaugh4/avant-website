@@ -1,0 +1,89 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-lg) var(--space-md);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-lg);
+    background: linear-gradient(135deg,
+            rgba(255 255 255 / 0.02) 0%,
+            rgba(74 144 217 / 0.04) 100%);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out,
+        border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.card:hover {
+    border-color: rgba(74, 144, 217, 0.25);
+    box-shadow: 0 8px 32px rgba(74, 144, 217, 0.08);
+}
+
+/* Progress ring */
+.ringContainer {
+    position: relative;
+    width: 88px;
+    height: 88px;
+    margin-bottom: var(--space-md);
+}
+
+.ring {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.ringBg {
+    stroke: rgba(255, 255, 255, 0.06);
+}
+
+.ringFill {
+    stroke: var(--ls-accent);
+    transition: stroke-dashoffset 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ringIcon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--ls-accent);
+}
+
+/* Text content */
+.value {
+    font-family: var(--font-display);
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-bold);
+    color: var(--ls-accent);
+    line-height: 1;
+    margin-bottom: var(--space-xs);
+}
+
+.label {
+    font-family: var(--font-display);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    color: var(--ls-ivory);
+    margin-bottom: var(--space-sm);
+}
+
+.description {
+    font-size: var(--fs-body);
+    color: var(--ls-ivory-muted);
+    max-width: 26ch;
+    line-height: 1.6;
+    margin: 0;
+}

@@ -5,29 +5,11 @@
 /* Stats row */
 .stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-lg);
     margin-top: var(--space-xl);
 }
 
-.stat {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-}
-
-.statValue {
-    font-family: var(--font-display);
-    font-size: var(--fs-h2);
-    font-weight: var(--fw-bold);
-    color: var(--ls-accent);
-}
-
-.statLabel {
-    font-size: var(--fs-small);
-    color: var(--ls-ivory-muted);
-    max-width: 25ch;
-}
 
 /* Industry preview cards */
 .industryGrid {
@@ -76,6 +58,7 @@
 @media (max-width: 768px) {
     .stats {
         grid-template-columns: 1fr;
+        max-width: 360px;
     }
 
     .industryGrid {

@@ -1,13 +1,31 @@
 import Hero from "@/components/Hero";
 import ScrollReveal from "@/components/ScrollReveal";
-import AnimatedStat from "@/components/AnimatedStat";
+import StatCard from "@/components/StatCard";
 import TiltCard from "@/components/TiltCard";
 import styles from "./home.module.css";
 
 const PREVIEW_STATS = [
-    { value: "78%", label: "of SMBs say AI isn't relevant to them" },
-    { value: "5–10h", label: "wasted per employee per week on tasks AI can handle" },
-    { value: "$0", label: "ROI from basic ChatGPT prompts most teams use" },
+    {
+        value: "78%",
+        label: "Blind Spot",
+        description: "of SMBs say AI isn't relevant — while competitors adopt it",
+        icon: "alert",
+        ring: 78,
+    },
+    {
+        value: "10h",
+        label: "Wasted Weekly",
+        description: "per employee on tasks that AI handles in minutes",
+        icon: "clock",
+        ring: 62,
+    },
+    {
+        value: "$0",
+        label: "Zero ROI",
+        description: "from basic ChatGPT prompts most teams rely on",
+        icon: "trending-down",
+        ring: 5,
+    },
 ];
 
 const PREVIEW_INDUSTRIES = [
@@ -25,22 +43,24 @@ export default function Home() {
             <section className={`section ${styles.preview}`}>
                 <div className="container">
                     <ScrollReveal>
-                        <p className="section-label">The Gap</p>
                         <h2 className="section-title">
                             Your team is paying for AI they&apos;re not using.
                         </h2>
                     </ScrollReveal>
                     <div className={styles.stats}>
                         {PREVIEW_STATS.map((s, i) => (
-                            <ScrollReveal key={s.label} delay={i * 150}>
-                                <div className={styles.stat}>
-                                    <AnimatedStat value={s.value} className={styles.statValue} />
-                                    <span className={styles.statLabel}>{s.label}</span>
-                                </div>
-                            </ScrollReveal>
+                            <StatCard
+                                key={s.label}
+                                value={s.value}
+                                label={s.label}
+                                description={s.description}
+                                icon={s.icon}
+                                ring={s.ring}
+                                delay={i * 200}
+                            />
                         ))}
                     </div>
-                    <ScrollReveal delay={500}>
+                    <ScrollReveal delay={600}>
                         <a href="/about" className="btn btn--secondary" style={{ marginTop: "var(--space-lg)" }}>
                             Learn Why →
                         </a>
