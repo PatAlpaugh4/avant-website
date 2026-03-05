@@ -44,7 +44,7 @@ export default function Navbar() {
                     ))}
                 </ul>
 
-                <Link href="/contact" className={`btn btn--primary ${styles.cta}`}>
+                <Link href="/contact#booking" className={`btn btn--primary ${styles.cta}`}>
                     Book Free Assessment
                 </Link>
 
@@ -74,7 +74,7 @@ export default function Navbar() {
                         </Link>
                     ))}
                     <Link
-                        href="/contact"
+                        href="/contact#booking"
                         className="btn btn--primary"
                         onClick={() => setMenuOpen(false)}
                         style={{ marginTop: "1rem", width: "100%" }}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Contact from "@/components/Contact";
+import BookingSection from "@/components/BookingSection";
 
 export const metadata: Metadata = {
     title: "Contact",
@@ -11,6 +12,7 @@ export default function ContactPage() {
     return (
         <>
             <div style={{ height: "var(--nav-height)" }} />
+            <BookingSection />
             <Contact />
         </>
     );

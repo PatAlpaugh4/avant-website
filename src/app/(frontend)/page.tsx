@@ -88,7 +88,7 @@ export default function Home() {
                         Start with a free, no-obligation assessment. We&apos;ll map your
                         biggest opportunities and show you exactly where AI fits.
                     </p>
-                    <a href="/contact" className="btn btn--primary">
+                    <a href="/contact#booking" className="btn btn--primary">
                         Book Free Assessment
                     </a>
                 </div>

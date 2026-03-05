@@ -24,7 +24,7 @@ export default function ServicesPage() {
                         Book a free assessment and we&apos;ll recommend the right
                         starting point for your business.
                     </p>
-                    <a href="/contact" className="btn btn--primary">
+                    <a href="/contact#booking" className="btn btn--primary">
                         Book Free Assessment
                     </a>
                 </div>

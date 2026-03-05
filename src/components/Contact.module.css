@@ -1,49 +1,6 @@
 .section {
     background: var(--ls-charcoal-light);
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-2xl);
-    align-items: start;
-}
-
-.left {
     padding-top: var(--space-md);
-}
-
-.calendly {
-    margin-top: var(--space-xl);
-    padding: var(--space-md);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--glass-border);
-    background: var(--ls-charcoal);
-}
-
-.calendlyLabel {
-    font-size: var(--fs-small);
-    color: var(--ls-ivory-muted);
-    margin-bottom: var(--space-sm);
-}
-
-.details {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
-    margin-top: var(--space-xl);
-}
-
-.detail {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    color: var(--ls-ivory-muted);
-    font-size: var(--fs-small);
-}
-
-.detailIcon {
-    font-size: 1.2rem;
 }
 
 /* Form */
@@ -52,11 +9,8 @@
     border: 1px solid var(--glass-border);
     border-radius: var(--border-radius);
     padding: var(--space-lg);
-}
-
-.formTitle {
-    font-size: var(--fs-h3);
-    margin-bottom: var(--space-lg);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .row {
@@ -81,11 +35,6 @@
 }
 
 @media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-xl);
-    }
-
     .row {
         grid-template-columns: 1fr;
     }

@@ -1,0 +1,120 @@
+/* ============================================================
+   BookingSection — Google Calendar Embed
+   Glassmorphism card with skeleton loader
+   ============================================================ */
+
+.section {
+    background: var(--ls-charcoal-light);
+    padding-bottom: var(--space-md);
+}
+
+.wrapper {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-lg);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Iframe — force light mode for Google Calendar */
+.iframeContainer {
+    position: relative;
+    width: 100%;
+    min-height: 700px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    color-scheme: light;
+}
+
+.iframe {
+    display: block;
+    width: 100%;
+    min-height: 700px;
+    border: none;
+    border-radius: var(--border-radius);
+    background: #ffffff;
+}
+
+/* Skeleton loader */
+.skeleton {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-xl);
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.skeletonHidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.skeletonBar {
+    height: 20px;
+    border-radius: var(--border-radius-sm);
+    background: linear-gradient(90deg,
+            var(--ls-charcoal-mid) 25%,
+            var(--ls-charcoal-light) 50%,
+            var(--ls-charcoal-mid) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.8s infinite ease-in-out;
+}
+
+.skeletonBar:nth-child(1) {
+    width: 45%;
+    height: 28px;
+}
+
+.skeletonBar:nth-child(2) {
+    width: 70%;
+}
+
+.skeletonBar:nth-child(3) {
+    width: 55%;
+}
+
+.skeletonBar:nth-child(4) {
+    width: 100%;
+    height: 300px;
+    border-radius: var(--border-radius);
+}
+
+.skeletonBar:nth-child(5) {
+    width: 35%;
+    height: 44px;
+    border-radius: var(--border-radius);
+}
+
+/* "Prefer Email?" heading below calendar */
+.preferEmail {
+    text-align: center;
+    margin-top: var(--space-2xl);
+}
+
+/* Fallback */
+.fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    border: 1px dashed var(--glass-border);
+    border-radius: var(--border-radius);
+    color: var(--ls-ivory-muted);
+    font-size: var(--fs-small);
+    text-align: center;
+    padding: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        padding: var(--space-sm);
+        border-radius: var(--border-radius);
+    }
+}

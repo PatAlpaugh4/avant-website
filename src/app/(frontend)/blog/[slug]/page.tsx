@@ -100,7 +100,7 @@ export default async function BlogPostPage({ params }: Props) {
                         <a href="/blog" className="btn btn--secondary">
                             ← All Posts
                         </a>
-                        <a href="/contact" className="btn btn--primary">
+                        <a href="/contact#booking" className="btn btn--primary">
                             Book Free Assessment
                         </a>
                     </footer>

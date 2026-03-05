@@ -24,7 +24,7 @@ export default function IndustriesPage() {
                         Every industry has different AI opportunities. Let&apos;s find
                         yours.
                     </p>
-                    <a href="/contact" className="btn btn--primary">
+                    <a href="/contact#booking" className="btn btn--primary">
                         Book Free Assessment
                     </a>
                 </div>

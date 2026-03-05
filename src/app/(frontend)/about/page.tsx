@@ -29,7 +29,7 @@ export default function AboutPage() {
                     >
                         Book a free assessment — no strings attached.
                     </p>
-                    <a href="/contact" className="btn btn--primary">
+                    <a href="/contact#booking" className="btn btn--primary">
                         Book Free Assessment
                     </a>
                 </div>

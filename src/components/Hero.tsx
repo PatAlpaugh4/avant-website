@@ -17,7 +17,7 @@ export default function Hero() {
         </p>
 
         <div className={styles.actionsBlock}>
-          <Link href="/contact" className={styles.btnPrimary}>
+          <Link href="/contact#booking" className={styles.btnPrimary}>
             Book Free Assessment
           </Link>
           <Link href="/services" className={styles.btnSecondary}>
