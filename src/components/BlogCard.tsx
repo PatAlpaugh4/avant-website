@@ -41,6 +41,9 @@ export default function BlogCard({ post }: BlogCardProps) {
                     {post.author && (
                         <span className={styles.author}>{post.author}</span>
                     )}
+                    {post.author && date && (
+                        <span aria-hidden="true">&middot;</span>
+                    )}
                     {date && <span className={styles.date}>{date}</span>}
                 </div>
             </div>

@@ -4,6 +4,7 @@
     text-decoration: none;
     color: inherit;
     overflow: hidden;
+    padding: 0;
 }
 
 .card:hover .image {
