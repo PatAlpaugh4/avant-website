@@ -48,30 +48,6 @@
     opacity: 1;
 }
 
-/* ── Icon ── */
-.icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    background: rgba(74, 144, 217, 0.1);
-    border: 1px solid rgba(74, 144, 217, 0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    font-size: var(--fs-small);
-    font-weight: var(--fw-bold);
-    letter-spacing: var(--ls-wide);
-    color: var(--ls-accent);
-    margin-bottom: var(--space-lg);
-    flex-shrink: 0;
-    transition: background 0.3s ease, border-color 0.3s ease;
-}
-
-.card:hover .icon {
-    background: rgba(74, 144, 217, 0.15);
-    border-color: rgba(74, 144, 217, 0.25);
-}
 
 /* ── Name ── */
 .name {
