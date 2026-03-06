@@ -23,6 +23,24 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
+    // Close menu when route changes
+    useEffect(() => {
+        setMenuOpen(false);
+    }, [pathname]);
+
+    // Prevent scrolling when menu is open
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [menuOpen]);
+
     return (
         <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
             <div className={`container ${styles.inner}`}>
