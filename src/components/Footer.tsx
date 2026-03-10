@@ -13,7 +13,6 @@ export default function Footer() {
                 <div className={styles.links}>
                     <Link href="/services">Services</Link>
                     <Link href="/about">About</Link>
-                    <Link href="/industries">Industries</Link>
                     <Link href="/blog">Blog</Link>
                     <Link href="/contact">Contact</Link>
                 </div>

@@ -1,0 +1,166 @@
+/* ── What We Do Section ── */
+.section {
+    position: relative;
+    padding: var(--space-2xl) 0;
+    overflow: visible;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+/* DataStream animation — fills the section background */
+.stream {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.streamFallback {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at 50% 50%,
+        rgba(74, 144, 217, 0.04) 0%,
+        transparent 60%
+    );
+}
+
+/* Content overlay */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+.title {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    font-weight: var(--fw-bold);
+    color: var(--ls-white);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-sm);
+}
+
+.subtitle {
+    font-size: var(--fs-body);
+    color: var(--ls-ivory-muted);
+    line-height: 1.65;
+    max-width: 48ch;
+    margin-bottom: var(--space-xl);
+}
+
+/* Steps grid — horizontal on desktop, stacked on mobile */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+/* Equal-height cards via stretch + flex column */
+.steps > * {
+    display: flex;
+}
+
+/* Individual step card */
+.step {
+    display: flex;
+    flex-direction: column;
+    background: rgba(26, 26, 31, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    padding: var(--space-lg);
+    transition: border-color 0.4s ease, transform 0.4s var(--ease-out),
+        box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.step::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        var(--ls-accent),
+        var(--ls-accent-bright),
+        transparent
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.step:hover {
+    border-color: rgba(74, 144, 217, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(74, 144, 217, 0.06);
+}
+
+.step:hover::before {
+    opacity: 1;
+}
+
+.stepTitle {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: var(--fw-semibold);
+    color: var(--ls-ivory);
+    margin-bottom: var(--space-sm);
+    line-height: 1.2;
+}
+
+.stepDesc {
+    font-size: 0.92rem;
+    color: var(--ls-ivory-muted);
+    line-height: 1.65;
+    margin: 0;
+    flex: 1;
+}
+
+/* CTA buttons */
+.cta {
+    display: flex;
+    gap: var(--space-sm);
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .section {
+        min-height: auto;
+        padding: var(--space-xl) 0;
+    }
+
+    .stream {
+        opacity: 0.3;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .step {
+        padding: var(--space-md);
+    }
+
+    .cta {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}

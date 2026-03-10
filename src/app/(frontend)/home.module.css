@@ -1,67 +1,106 @@
-.preview {
-    border-bottom: 1px solid var(--glass-border);
-}
+/* ============================================================
+   HOME — Landing Page Sections
+   CTA Section (used by CtaSection component)
+   ============================================================ */
 
-/* Stats row */
-.stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-lg);
-    margin-top: var(--space-xl);
-}
-
-
-/* Industry preview cards */
-.industryGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: var(--space-md);
-    margin-top: var(--space-xl);
-}
-
-.industryCard {
-    text-align: left;
-}
-
-.industryIcon {
-    display: inline-flex;
+/* ── CTA Section ── */
+.ctaSection {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: var(--border-radius-sm);
-    background: var(--ls-charcoal-mid);
-    border: 1px solid var(--glass-border);
+    overflow: hidden;
+    padding: var(--space-3xl) 0;
+}
+
+.ctaBlob {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.7;
+}
+
+.ctaBlobFallback {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center,
+            rgba(74, 144, 217, 0.06) 0%,
+            transparent 70%);
+}
+
+.ctaContent {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ctaTitle {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: var(--fw-bold);
+    color: var(--ls-white);
+    line-height: 1.15;
+    margin-bottom: var(--space-md);
+    letter-spacing: -0.02em;
+}
+
+.ctaSub {
+    font-size: var(--fs-body);
+    color: var(--ls-ivory-muted);
+    max-width: 50ch;
+    margin: 0 auto var(--space-xl);
+    line-height: 1.7;
+}
+
+.ctaButtons {
+    display: flex;
+    gap: var(--space-sm);
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ctaPrimary {
     font-family: var(--font-display);
     font-size: var(--fs-small);
-    font-weight: var(--fw-bold);
-    letter-spacing: var(--ls-widest);
-    color: var(--ls-accent);
-    margin-bottom: var(--space-sm);
-}
-
-.industryName {
-    font-size: var(--fs-h3);
-    margin-bottom: var(--space-xs);
-}
-
-.industryDesc {
-    font-size: var(--fs-small);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
     color: var(--ls-ivory-muted);
+    text-decoration: none;
+    padding: 0.75rem 2rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 100px;
+    transition: all var(--duration-fast) var(--ease-out);
 }
 
-/* Final CTA section */
-.ctaSection {
-    background: var(--gradient-hero);
+.ctaPrimary:hover {
+    color: var(--ls-white);
+    border-color: var(--ls-accent);
+    background: rgba(74, 144, 217, 0.08);
 }
 
+/* ── Responsive ── */
 @media (max-width: 768px) {
-    .stats {
-        grid-template-columns: 1fr;
-        max-width: 360px;
+    .ctaSection {
+        min-height: 70vh;
+        padding: var(--space-2xl) 0;
     }
 
-    .industryGrid {
-        grid-template-columns: 1fr;
+    .ctaTitle {
+        font-size: clamp(2rem, 7vw, 3rem);
+    }
+
+    .ctaButtons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .ctaButtons .btn {
+        width: 100%;
     }
 }

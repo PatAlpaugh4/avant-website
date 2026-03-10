@@ -1,0 +1,128 @@
+/* ── Who We Are Section ── */
+.section {
+    position: relative;
+    padding: var(--space-2xl) 0;
+    overflow: visible;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+/* 3D torus knot animation — full background, offset right */
+.orbital {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.orbitalFallback {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at 60% 50%,
+        rgba(74, 144, 217, 0.04) 0%,
+        transparent 60%
+    );
+}
+
+/* Content overlay */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.left {
+    max-width: 560px;
+}
+
+/* Title */
+.title {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: var(--fw-bold);
+    color: var(--ls-white);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+}
+
+/* Subtitle — tight, direct */
+.subtitle {
+    font-size: var(--fs-body);
+    color: var(--ls-ivory-muted);
+    line-height: 1.65;
+    max-width: 44ch;
+    margin-bottom: var(--space-xl);
+}
+
+/* Offerings grid */
+.offerings {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.offering {
+    padding: var(--space-md) 0 var(--space-md) var(--space-lg);
+    border-left: 2px solid var(--ls-accent);
+    transition: border-color 0.4s ease;
+}
+
+.offering:hover {
+    border-left-color: var(--ls-accent-bright);
+}
+
+/* Tag */
+.offeringTag {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ls-accent);
+    display: block;
+    margin-bottom: var(--space-xs);
+}
+
+.offeringTitle {
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 2vw, 1.35rem);
+    font-weight: var(--fw-semibold);
+    color: var(--ls-ivory);
+    margin-bottom: var(--space-xs);
+    line-height: 1.3;
+}
+
+.offeringDesc {
+    font-size: 0.92rem;
+    color: var(--ls-ivory-muted);
+    line-height: 1.6;
+    max-width: 48ch;
+    margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .section {
+        min-height: auto;
+        padding: var(--space-xl) 0;
+    }
+
+    .orbital {
+        opacity: 0.3;
+    }
+
+    .left {
+        max-width: none;
+    }
+
+    .title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .offering {
+        padding: var(--space-sm) 0 var(--space-sm) var(--space-md);
+    }
+}

@@ -8,7 +8,6 @@ import styles from "./Navbar.module.css";
 const NAV_LINKS = [
     { label: "Services", href: "/services" },
     { label: "About", href: "/about" },
-    { label: "Industries", href: "/industries" },
     { label: "Blog", href: "/blog" },
 ];
 
@@ -62,7 +61,7 @@ export default function Navbar() {
                     ))}
                 </ul>
 
-                <Link href="/contact#booking" className={`btn btn--primary ${styles.cta}`}>
+                <Link href="/contact#booking" className={styles.cta}>
                     Book Free Assessment
                 </Link>
 

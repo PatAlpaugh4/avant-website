@@ -9,9 +9,8 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     padding: var(--space-2xl) 0;
-    background-color: var(--ls-charcoal);
 }
 
 /* Subtle, massive background glow indicating "AI Energy" */

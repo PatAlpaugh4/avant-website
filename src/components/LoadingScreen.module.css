@@ -1,0 +1,65 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--ls-charcoal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+        visibility 0.6s;
+    opacity: 1;
+    visibility: visible;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    color: var(--ls-white);
+}
+
+.bar {
+    width: 120px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.barFill {
+    width: 30%;
+    height: 100%;
+    background: var(--ls-accent);
+    border-radius: 2px;
+    animation: pulse 1.2s ease-in-out infinite;
+    transition: width 0.4s ease;
+}
+
+.barDone {
+    width: 100%;
+    animation: none;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(250%);
+    }
+}

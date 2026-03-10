@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { useSceneReady } from "@/components/SceneReadyContext";
 import styles from "./GlobeBackground.module.css";
 
 /* ── Config ── */
@@ -44,13 +45,18 @@ export default function GlobeBackground() {
     const containerRef = useRef<HTMLDivElement>(null);
     const frameRef = useRef<number>(0);
     const mouseRef = useRef({ x: 0, y: 0, tx: 0, ty: 0, active: false });
+    const { markReady } = useSceneReady();
+    const readyRef = useRef(false);
 
     useEffect(() => {
         const container = containerRef.current;
         if (!container) return;
 
         // Allow rendering on mobile, but gracefully degrade on extremely low-end devices
-        if (navigator.hardwareConcurrency != null && navigator.hardwareConcurrency < 2) return;
+        if (navigator.hardwareConcurrency != null && navigator.hardwareConcurrency < 2) {
+            markReady("globe");
+            return;
+        }
 
         const width = container.clientWidth;
         const height = container.clientHeight;
@@ -58,7 +64,7 @@ export default function GlobeBackground() {
         /* ── Scene setup ── */
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 100);
-        camera.position.set(0, 0, 5);
+        camera.position.set(0, -1.2, 5);
 
         const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
         renderer.setSize(width, height);
@@ -184,6 +190,12 @@ export default function GlobeBackground() {
 
         const animate = () => {
             frameRef.current = requestAnimationFrame(animate);
+
+            if (!readyRef.current) {
+                readyRef.current = true;
+                markReady("globe");
+            }
+
             if (!isVisible) return;
 
             time += 0.002;
@@ -324,7 +336,7 @@ export default function GlobeBackground() {
                 container.removeChild(renderer.domElement);
             }
         };
-    }, []);
+    }, [markReady]);
 
     return <div ref={containerRef} className={styles.container} />;
 }
