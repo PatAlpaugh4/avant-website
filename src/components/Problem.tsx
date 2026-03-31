@@ -7,7 +7,7 @@ import styles from "./Problem.module.css";
 const STATS = [
     { value: "78%", label: "of SMBs say AI isn't relevant to them" },
     { value: "5–10h", label: "wasted per employee per week on tasks AI can handle" },
-    { value: "$0", label: "ROI from the basic ChatGPT prompts most teams use" },
+    { value: "0%", label: "measurable ROI from the basic ChatGPT prompts most teams use" },
 ];
 
 /* ── Animated stat value ── */
@@ -93,7 +93,7 @@ export default function Problem() {
                             <h3 className={styles.contrastTitle}>What they offer</h3>
                             <ul className={styles.contrastList}>
                                 <li>6-month strategy decks</li>
-                                <li>$50K+ consulting fees</li>
+                                <li>Overpriced consulting firms</li>
                                 <li>Generic AI recommendations</li>
                                 <li>Teams of juniors</li>
                             </ul>

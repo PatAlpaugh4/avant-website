@@ -36,7 +36,7 @@ const INDUSTRIES = [
     },
     {
         name: "Engineering & Consulting",
-        sprint: "AI Quick-Win Workshop",
+        sprint: "AI Readiness Session",
         desc: "Get your billable team using AI for proposals, reports, and project scoping.",
     },
     {

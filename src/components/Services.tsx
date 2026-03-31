@@ -7,7 +7,6 @@ const STAGES = [
     {
         label: "Explore",
         title: "AI Opportunity Assessment",
-        price: "Free",
         timeline: "30–45 min",
         description:
             "A diagnostic call where we review your current tools and workflows, identify your top three automation opportunities, and estimate ROI. You get a one-page AI Opportunity Summary within 48 hours — whether or not you work with us.",
@@ -16,65 +15,57 @@ const STAGES = [
     },
     {
         label: "Learn",
-        title: "AI Quick-Win Workshop",
-        price: "$500/person or $3,500 team",
+        title: "AI Readiness Session",
         timeline: "Half day",
         description:
-            "A 4-hour hands-on session where your team leaves with working AI tools, not just concepts. Three modules: activate AI you're already paying for, build your first AI assistant, and create live automations connecting your core tools.",
+            "A hands-on session where your team leaves with working AI tools, not just concepts. Three modules: activate AI you're already paying for, build your first AI assistant, and create live automations connecting your core tools.",
         details: [
             "Activate AI features in QuickBooks, your CRM, Copilot, or Google Workspace",
             "Hands-on with ChatGPT and Claude for email, documents, and meetings",
             "Build 2–3 live Zapier workflows during the session",
             "Personalized AI Action Plan within 48 hours",
         ],
-        cta: "Contact to Book",
+        cta: "Book a Conversation",
         ctaHref: "#contact",
     },
     {
         label: "Implement",
         title: "AI Implementation Sprints",
-        price: "$2,500–$3,500 each",
-        timeline: "2–4 weeks",
+        timeline: "2–4 weeks per sprint",
         description:
             "Focused engagements that solve one specific workflow problem. Every sprint: audit (week 1), build (week 2), train (week 3), optimize (week 4). Includes working system, team training, and 30-day ROI scorecard.",
         sprints: [
             {
                 name: "AI Knowledge Base",
-                price: "$2,500",
                 desc: "Internal AI assistant trained on your company documents and SOPs. Target: new employee ramp time cut in half.",
             },
             {
                 name: "24/7 Support Agent",
-                price: "$3,500",
                 desc: "AI customer support that handles common inquiries around the clock. Target: 50%+ queries resolved without a human.",
             },
             {
                 name: "CRM Intelligence Upgrade",
-                price: "$3,500",
                 desc: "Activate AI in your CRM — lead scoring, deal predictions, automated follow-ups. Target: 25–30% conversion improvement.",
             },
             {
                 name: "Client Intake Accelerator",
-                price: "$2,500",
                 desc: "AI-powered intake with smart forms, automated document collection, and CRM integration. Target: 70% faster intake.",
             },
             {
                 name: "HR & Onboarding Automation",
-                price: "$3,500",
                 desc: "Automated onboarding sequences and employee FAQ bot. Target: onboarding from 2 weeks to 2 days.",
             },
         ],
-        cta: "Discuss a Sprint",
+        cta: "Contact for Proposal",
         ctaHref: "#contact",
     },
     {
         label: "Grow",
         title: "Monthly AI Retainer",
-        price: "$3,000–$5,000/mo",
-        timeline: "3-month minimum",
+        timeline: "Ongoing partnership",
         description:
             "Fractional Chief AI Officer support. Monthly roadmap reviews, performance monitoring, new tool evaluations, team training, and government grant navigation to offset 50–80% of your AI investment.",
-        cta: "Learn More",
+        cta: "Contact for Proposal",
         ctaHref: "#contact",
     },
 ];
@@ -110,8 +101,6 @@ export default function Services() {
                                     <div>
                                         <h3 className={styles.stageTitle}>{stage.title}</h3>
                                         <div className={styles.stageMeta}>
-                                            <span className={styles.stagePrice}>{stage.price}</span>
-                                            <span className={styles.stageDot}>·</span>
                                             <span className={styles.stageTimeline}>
                                                 {stage.timeline}
                                             </span>
@@ -143,19 +132,12 @@ export default function Services() {
                                                     <span className={styles.sprintName}>
                                                         {sprint.name}
                                                     </span>
-                                                    <span className={styles.sprintPrice}>
-                                                        {sprint.price}
-                                                    </span>
                                                 </div>
                                                 {expandedSprint === si && (
                                                     <p className={styles.sprintDesc}>{sprint.desc}</p>
                                                 )}
                                             </button>
                                         ))}
-                                        <p className={styles.bundles}>
-                                            <strong>Sprint Bundles:</strong> Pick 2 for ~15% off. Pick
-                                            3 for ~20% off.
-                                        </p>
                                     </div>
                                 )}
 

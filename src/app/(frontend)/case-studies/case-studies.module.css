@@ -1,0 +1,107 @@
+.hero {
+    padding: var(--space-section) 0 var(--space-xl);
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.card {
+    background: var(--ls-charcoal-light);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    padding: var(--space-lg);
+    text-decoration: none;
+    display: block;
+    position: relative;
+    transition: transform var(--duration-medium) var(--ease-out),
+        box-shadow var(--duration-medium) var(--ease-out);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-accent);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    opacity: 0;
+    transition: opacity var(--duration-medium) var(--ease-out);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.industry {
+    font-size: var(--fs-xs);
+    font-family: var(--font-display);
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    color: var(--ls-accent);
+    margin-bottom: var(--space-sm);
+    display: block;
+}
+
+.headline {
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-semibold);
+    color: var(--ls-ivory);
+    line-height: var(--lh-heading);
+    margin-bottom: var(--space-sm);
+}
+
+.description {
+    font-size: var(--fs-body);
+    color: var(--ls-ivory-muted);
+    line-height: var(--lh-body);
+}
+
+.arrow {
+    display: inline-block;
+    margin-top: var(--space-md);
+    font-size: var(--fs-small);
+    color: var(--ls-accent);
+    transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.card:hover .arrow {
+    transform: translateX(4px);
+}
+
+.cta {
+    text-align: center;
+    padding: var(--space-section) 0;
+}
+
+.ctaTitle {
+    font-size: var(--fs-h2);
+    line-height: var(--lh-heading);
+    color: var(--ls-ivory);
+    margin-bottom: var(--space-md);
+}
+
+.ctaText {
+    font-size: var(--fs-body);
+    color: var(--ls-ivory-muted);
+    max-width: 540px;
+    margin: 0 auto var(--space-lg);
+    line-height: var(--lh-body);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

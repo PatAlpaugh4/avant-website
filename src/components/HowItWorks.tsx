@@ -12,24 +12,31 @@ const DataStream = dynamic(() => import("@/components/DataStream"), {
 const STEPS = [
     {
         number: "01",
-        title: "Assessment",
+        title: "Engagement",
         description:
-            "Free 30–45 minute call. We map your tools, workflows, and biggest time sinks. You get a one-page AI Opportunity Summary — no strings attached.",
-        outcome: "Know exactly where AI fits in your business",
+            "We connect and align on what you're trying to solve.",
+        outcome: "Clarity on goals and expectations",
     },
     {
         number: "02",
-        title: "Workshop",
+        title: "Discovery",
         description:
-            "Half-day, hands-on session. Your team leaves with working automations built on your real systems — not slides about what AI could do someday.",
-        outcome: "Working tools from day one",
+            "We dig into your operations, workflows, and pain points.",
+        outcome: "Deep understanding of your business",
     },
     {
         number: "03",
-        title: "Sprint & Scale",
+        title: "Assessment",
         description:
-            "Focused 2–4 week sprints targeting your highest-ROI workflow. Then ongoing retainer support to expand, optimize, and stay ahead.",
-        outcome: "Measurable ROI within weeks",
+            "We identify the highest-leverage AI opportunities specific to your business.",
+        outcome: "Prioritized AI roadmap tailored to your workflows",
+    },
+    {
+        number: "04",
+        title: "Proposal",
+        description:
+            "You receive a flat-fee proposal with clear options and measurable outcomes.",
+        outcome: "A concrete plan with no surprises",
     },
 ];
 
@@ -43,7 +50,7 @@ export default function HowItWorks() {
             <div className={`container ${styles.content}`}>
                 <ScrollReveal>
                     <p className="section-label">How It Works</p>
-                    <h2 className={styles.title}>Three steps. Real results.</h2>
+                    <h2 className={styles.title}>Four steps. Real results.</h2>
                     <p className={styles.subtitle}>
                         Every engagement starts with understanding your business. We never
                         sell a solution without diagnosing the problem first.

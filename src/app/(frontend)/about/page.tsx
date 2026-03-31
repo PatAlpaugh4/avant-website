@@ -3,7 +3,7 @@ import AboutHero from "@/components/AboutHero";
 import Problem from "@/components/Problem";
 import HowItWorks from "@/components/HowItWorks";
 import Differentiators from "@/components/Differentiators";
-import FAQ from "@/components/FAQ";
+import Team from "@/components/Team";
 import CtaSection from "@/components/CtaSection";
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export default function AboutPage() {
             <Problem />
             <HowItWorks />
             <Differentiators />
-            <FAQ />
+            <Team />
             <CtaSection />
         </>
     );

@@ -6,7 +6,7 @@ import styles from "./Differentiators.module.css";
 const ATTRIBUTES = [
     { label: "Time to ROI", us: "Weeks", them: "Months" },
     { label: "Implementation", us: "Working tools, day one", them: "Strategy decks" },
-    { label: "Investment", us: "Starts free", them: "$50K+" },
+    { label: "Investment", us: "Transparent, flat-fee", them: "Open-ended retainers" },
     { label: "Focus", us: "Your actual workflows", them: "Generic frameworks" },
     { label: "Commitment", us: "Pay per sprint", them: "6-month contracts" },
     { label: "Location", us: "Ontario-focused", them: "Global, generic" },

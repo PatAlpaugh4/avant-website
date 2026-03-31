@@ -4,7 +4,7 @@ import Services from "@/components/Services";
 export const metadata: Metadata = {
     title: "Services",
     description:
-        "AI workshops, implementation sprints, and monthly retainers for Ontario businesses. From free assessment to full AI strategy.",
+        "AI readiness sessions, implementation sprints, and monthly retainers for Ontario businesses. From free assessment to full AI strategy.",
 };
 
 export default function ServicesPage() {

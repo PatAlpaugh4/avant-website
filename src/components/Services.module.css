@@ -82,16 +82,6 @@
     flex-wrap: wrap;
 }
 
-.stagePrice {
-    font-family: var(--font-display);
-    font-weight: var(--fw-semibold);
-    color: var(--ls-accent);
-}
-
-.stageDot {
-    color: var(--ls-slate);
-}
-
 .stageTimeline {
     color: var(--ls-ivory-muted);
     font-size: var(--fs-small);
@@ -165,24 +155,11 @@
     font-weight: var(--fw-medium);
 }
 
-.sprintPrice {
-    font-family: var(--font-display);
-    font-weight: var(--fw-semibold);
-    color: var(--ls-accent);
-    font-size: var(--fs-small);
-}
-
 .sprintDesc {
     margin-top: var(--space-xs);
     font-size: var(--fs-small);
     color: var(--ls-ivory-muted);
     line-height: var(--lh-body);
-}
-
-.bundles {
-    font-size: var(--fs-small);
-    color: var(--ls-slate);
-    margin-top: var(--space-xs);
 }
 
 @media (max-width: 768px) {

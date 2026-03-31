@@ -39,7 +39,7 @@ export default function WhoWeAre() {
                             We implement AI.
                         </h2>
                         <p className={styles.subtitle}>
-                            Not decks. Not workshops. Working systems built into
+                            Not decks. Not theory. Working systems built into
                             your business — tailored to your workflows, your
                             software, your team.
                         </p>
@@ -65,10 +65,10 @@ export default function WhoWeAre() {
 
                     <ScrollReveal delay={700}>
                         <a
-                            href="/services"
+                            href="/case-studies"
                             className="btn btn--secondary"
                         >
-                            View Services →
+                            View Case Studies →
                         </a>
                     </ScrollReveal>
                 </div>

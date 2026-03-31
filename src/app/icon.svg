@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <style>
+    .mark { fill: #1a1a1f; }
+    @media (prefers-color-scheme: dark) {
+      .mark { fill: #f0ede6; }
+    }
+  </style>
+  <!-- Diamond -->
+  <polygon class="mark" points="15,60 35,36 55,60 35,84" />
+  <!-- Chevron -->
+  <polygon class="mark" points="35,24 105,60 35,96 65,60" />
+</svg>

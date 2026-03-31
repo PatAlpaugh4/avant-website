@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
     title: {
         default:
-            "Avant | AI Workshops & Implementation for Ontario Businesses",
+            "Avant | AI Implementation & Strategy for Ontario Businesses",
         template: "%s | Avant",
     },
     description:

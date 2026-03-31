@@ -7,22 +7,22 @@ import styles from "./ServiceTimeline.module.css";
 const STEPS = [
     {
         number: "01",
-        title: "Free Assessment",
+        title: "Engagement",
         description:
-            "We audit your current workflows, identify AI-ready processes, and map your biggest time and cost savings — at no cost.",
+            "We connect and align on what you're trying to solve — your goals, your pain points, and what success looks like.",
         icon: (
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
         ),
-        cta: { label: "Book Assessment", href: "/contact#booking" },
+        cta: { label: "Book a Conversation", href: "/contact#booking" },
     },
     {
         number: "02",
-        title: "Hands-On Workshops",
+        title: "Discovery & Assessment",
         description:
-            "Your team learns to use AI tools effectively in live sessions tailored to your industry, with real data and real workflows.",
+            "We dig into your operations and workflows, then identify the highest-leverage AI opportunities specific to your business.",
         icon: (
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -31,13 +31,13 @@ const STEPS = [
                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
             </svg>
         ),
-        cta: { label: "View Workshops", href: "/services" },
+        cta: { label: "View Services", href: "/services" },
     },
     {
         number: "03",
-        title: "Implementation Sprint",
+        title: "Proposal & Implementation",
         description:
-            "We build, integrate, and deploy custom AI solutions into your existing systems — then train your team to run them independently.",
+            "You receive a flat-fee proposal with clear options. Once approved, we build, integrate, and deploy — then train your team to run it independently.",
         icon: (
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />

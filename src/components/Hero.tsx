@@ -27,8 +27,8 @@ export default function Hero() {
           <Link href="/contact#booking" className={styles.btnPrimary}>
             Book Free Assessment
           </Link>
-          <Link href="/services" className={styles.btnSecondary}>
-            View Our Services
+          <Link href="/case-studies" className={styles.btnSecondary}>
+            View Case Studies
           </Link>
         </div>
       </div>
