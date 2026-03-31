@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../../../../../keystatic.config";
 import { notFound } from "next/navigation";
+import Image from 'next/image';
 import styles from "./post.module.css";
 
 type Props = {
@@ -93,10 +94,13 @@ export default async function BlogPostPage({ params }: Props) {
 
                     {post.coverImage && (
                         <div className={styles.coverWrap}>
-                            <img
+                            <Image
                                 src={post.coverImage}
                                 alt={title}
+                                width={1200}
+                                height={630}
                                 className={styles.coverImage}
+                                priority
                             />
                         </div>
                     )}

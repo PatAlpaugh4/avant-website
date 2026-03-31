@@ -11,7 +11,7 @@ export default function HomeShell({
     children: React.ReactNode;
 }) {
     return (
-        <SceneReadyProvider sceneIds={SCENE_IDS} timeout={4000}>
+        <SceneReadyProvider sceneIds={SCENE_IDS} timeout={2000}>
             <LoadingScreen />
             {children}
         </SceneReadyProvider>

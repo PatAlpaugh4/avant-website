@@ -26,6 +26,8 @@ export default function BookingSection() {
                                 className={styles.iframe}
                                 title="Book an appointment"
                                 loading="lazy"
+                                width={800}
+                                height={600}
                             />
                         </div>
                     ) : (
