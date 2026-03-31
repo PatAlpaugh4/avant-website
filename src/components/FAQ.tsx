@@ -35,6 +35,7 @@ export default function FAQ() {
     const [open, setOpen] = useState<number | null>(null);
 
     return (
+        <>
         <section className={`section ${styles.section}`} id="faq">
             <div className={`container container--narrow ${styles.content}`}>
                 <ScrollReveal>
@@ -76,5 +77,18 @@ export default function FAQ() {
                 </div>
             </div>
         </section>
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": FAQS.map(faq => ({
+                    "@type": "Question",
+                    "name": faq.q,
+                    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+                }))
+            }) }}
+        />
+        </>
     );
 }
