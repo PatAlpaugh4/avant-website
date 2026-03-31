@@ -114,26 +114,31 @@ export default async function BlogPostPage({ params }: Props) {
                 </div>
             </article>
 
-            {/* Article structured data */}
+            {/* BlogPosting structured data */}
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Article",
-                        headline: title,
-                        description: post.excerpt || "",
-                        author: {
-                            "@type": "Person",
-                            name: post.author || "Avant Team",
-                        },
-                        datePublished: post.publishedAt,
-                        publisher: {
-                            "@type": "Organization",
-                            name: "Avant",
-                        },
-                    }),
-                }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "BlogPosting",
+                    "headline": title,
+                    "description": post.excerpt || "",
+                    "url": `https://www.avantai.ca/blog/${slug}`,
+                    "image": post.coverImage ? `https://www.avantai.ca${post.coverImage}` : undefined,
+                    "datePublished": post.publishedAt,
+                    "dateModified": post.publishedAt,
+                    "author": {
+                        "@type": "Person",
+                        "name": post.author || "Avant Team",
+                        "url": "https://www.avantai.ca/about"
+                    },
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": "Avant",
+                        "url": "https://www.avantai.ca",
+                        "logo": { "@type": "ImageObject", "url": "https://www.avantai.ca/images/og-default.png" }
+                    },
+                    "mainEntityOfPage": { "@type": "WebPage", "@id": `https://www.avantai.ca/blog/${slug}` }
+                }) }}
             />
         </>
     );

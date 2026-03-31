@@ -30,6 +30,74 @@ export default function ServicesPage() {
                     </a>
                 </div>
             </section>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.avantai.ca" },
+                        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.avantai.ca/services" }
+                    ]
+                }) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "item": {
+                                "@type": "Service",
+                                "name": "AI Opportunity Assessment",
+                                "description": "A diagnostic call to identify your top three automation opportunities with estimated ROI.",
+                                "provider": { "@id": "https://www.avantai.ca/#organization" },
+                                "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
+                                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CAD", "description": "Free" }
+                            }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "item": {
+                                "@type": "Service",
+                                "name": "AI Readiness Session",
+                                "description": "Half-day hands-on session where your team leaves with working AI tools and a personalized AI Action Plan.",
+                                "provider": { "@id": "https://www.avantai.ca/#organization" },
+                                "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
+                                "offers": { "@type": "Offer", "price": "500", "priceCurrency": "CAD", "description": "$500/person" }
+                            }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "item": {
+                                "@type": "Service",
+                                "name": "AI Implementation Sprints",
+                                "description": "2-4 week focused engagements that solve one specific workflow problem with a 30-day ROI scorecard.",
+                                "provider": { "@id": "https://www.avantai.ca/#organization" },
+                                "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
+                                "offers": { "@type": "Offer", "price": "2500", "priceCurrency": "CAD", "description": "$2,500–$3,500" }
+                            }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "item": {
+                                "@type": "Service",
+                                "name": "Monthly AI Retainer",
+                                "description": "Fractional Chief AI Officer support with monthly roadmap reviews, performance monitoring, and team training.",
+                                "provider": { "@id": "https://www.avantai.ca/#organization" },
+                                "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
+                                "offers": { "@type": "Offer", "price": "3000", "priceCurrency": "CAD", "description": "$3,000–$5,000/month" }
+                            }
+                        }
+                    ]
+                }) }}
+            />
         </>
     );
 }
