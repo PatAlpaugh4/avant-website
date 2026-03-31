@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from "./BlogCard.module.css";
 
 type BlogCardProps = {
@@ -25,9 +26,11 @@ export default function BlogCard({ post }: BlogCardProps) {
         <a href={`/blog/${post.slug}`} className={`card ${styles.card}`}>
             {post.coverImage && (
                 <div className={styles.imageWrap}>
-                    <img
+                    <Image
                         src={post.coverImage}
                         alt={post.title}
+                        width={600}
+                        height={340}
                         className={styles.image}
                     />
                 </div>
