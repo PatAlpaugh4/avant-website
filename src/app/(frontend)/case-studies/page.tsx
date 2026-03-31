@@ -42,7 +42,7 @@ export default function CaseStudiesPage() {
             <section className={`section ${styles.hero}`}>
                 <div className="container">
                     <ScrollReveal>
-                        <p className="section-label">Our Work</p>
+                        <p className="section-label" style={{ margin: "0 auto" }}>Our Work</p>
                         <h1 className="section-title">Case Studies</h1>
                         <p className="section-subtitle" style={{ margin: "0 auto" }}>
                             Real results from real engagements. Here&apos;s what
