@@ -8,7 +8,7 @@ const TEAM = [
   {
     name: "Patrick Alpaugh, MBA",
     role: "Co-Founder & CEO",
-    bio: "Patrick works directly with clients to identify high-impact AI opportunities and turn them into working systems. He brings a sharp focus on measurable outcomes \u2014 if it doesn\u2019t move the needle, it doesn\u2019t make the roadmap.",
+    bio: "A seasoned analyst in both private equity and venture capital, he has also led sales organizations within PE- and VC-backed companies. In his most recent role he introduced a breakthrough AI-powered inventory counting solution to the largest restaurant groups in Canada\u2014and personally owned and serviced every one of those accounts. Patrick founded this firm to bring that same technical mastery and proven commercial discipline to the Canadian PE/VC market. His mission is simple and urgent: to enable Bay Street to capture the extraordinary value from AI that Wall Street and Silicon Valley have already seized\u2014faster, smarter, and with greater return than anyone else thought possible.",
     image: "/images/team/patrick_headshot.jpeg",
   },
 ];

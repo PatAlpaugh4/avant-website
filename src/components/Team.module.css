@@ -9,8 +9,9 @@
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-lg);
   width: 100%;
   max-width: 900px;
@@ -26,6 +27,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  max-width: 430px;
   height: 100%;
   transition: transform var(--duration-normal) var(--ease-out),
     border-color var(--duration-normal) var(--ease-out),
@@ -105,6 +108,7 @@
 
 @media (max-width: 768px) {
   .grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
   }
 }
