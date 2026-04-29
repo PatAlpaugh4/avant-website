@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ScrollReveal from "@/components/ScrollReveal";
 import CaseStudyHeader from "@/components/CaseStudyHeader";
+import { BOOKING_URL } from "@/lib/booking";
 import styles from "./case-study.module.css";
 
 const CASE_STUDIES = [
@@ -19,15 +20,15 @@ const CASE_STUDIES = [
     },
     {
         slug: "professional-services-client-intake",
-        industry: "Professional Services",
-        headline: "3x faster client onboarding",
+        industry: "Venture Capital",
+        headline: "2 hours saved every morning",
         description:
-            "Streamlined client intake and qualification for a B2B consulting practice.",
+            "Automated daily meeting prep for a venture capital General Partner.",
         situation:
-            "A professional services firm struggled with a manual client intake process that involved multiple email exchanges, spreadsheet tracking, and inconsistent qualification criteria across team members.",
-        built: "We built an intelligent intake system that qualifies leads automatically, collects structured information through a conversational interface, and feeds qualified prospects directly into their CRM with full context — eliminating the back-and-forth.",
+            "A General Partner at a venture firm was spending 15–30 minutes manually preparing for each of his 3–8 daily meetings — reading prior email threads, checking LinkedIn, searching company news, and recalling what was promised. The process was inconsistent, time-consuming, and depended entirely on him remembering to do it before each call.",
+        built: "We built an automated briefing system that runs every weekday at 6 AM, reads his calendar, researches each external attendee and their company across the public web, and delivers a single cited email summarizing who he's meeting, what their company is doing, and any recent news or signals — all before he opens his laptop.",
         outcome:
-            "Client onboarding time dropped from 2 weeks to under 4 days. The team now spends their time on high-value conversations instead of administrative follow-ups.",
+            "Daily prep time dropped from up to two hours to zero. The GP now walks into every meeting with current, sourced context, and his team has adopted the same system to standardize how the firm prepares for founder conversations.",
     },
     {
         slug: "internal-crm-workflow-automation",
@@ -134,10 +135,12 @@ export default async function CaseStudyPage({ params }: Props) {
                                 ← All Case Studies
                             </a>
                             <a
-                                href="/contact#booking"
+                                href={BOOKING_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="btn btn--primary"
                             >
-                                Book Free Assessment
+                                Book Intro Call
                             </a>
                         </footer>
                     </ScrollReveal>

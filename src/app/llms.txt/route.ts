@@ -1,13 +1,13 @@
 export function GET() {
-    const content = `# Avant — AI Implementation for Ontario Businesses
+    const content = `# Avant — AI Implementation for Canadian PE, VC & Family Offices
 
-> Avant helps Ontario small and medium businesses move from AI curiosity to measurable operational results through workshops, implementation sprints, and fractional AI officer support. Real ROI. No hype.
+> Avant is an AI implementation consultancy for Canadian private equity, venture capital, and family offices — simple workflows, Claude enablement, and real systems shipped fast. Real ROI. No hype.
 
 ## Services
-- AI Opportunity Assessment (free): 30–45 minute diagnostic with AI Opportunity Summary
-- AI Quick-Win Workshop ($500/person): 4-hour hands-on session with working AI tools
-- AI Implementation Sprints ($2,500–$3,500): 2–4 week focused engagements with 30-day ROI scorecard
-- Monthly AI Retainer ($3,000–$5,000): Fractional Chief AI Officer support
+- AI Opportunity Assessment: 30–45 minute diagnostic with AI Opportunity Summary
+- AI Quick-Win Workshop: 4-hour hands-on session with working AI tools
+- AI Implementation Sprints: 2–4 week focused engagements with 30-day ROI scorecard
+- Monthly AI Retainer: Fractional Chief AI Officer support
 
 ## Pages
 - Homepage: https://www.avantai.ca
@@ -23,7 +23,7 @@ export function GET() {
 - Low Hanging Fruit AI Tools: https://www.avantai.ca/blog/the-low-hanging-fruit-ai-tools-worth-your-time-right-now
 
 ## Location
-Ontario, Canada
+Canada
 `;
 
     return new Response(content, {

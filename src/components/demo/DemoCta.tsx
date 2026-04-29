@@ -2,15 +2,13 @@
 
 import { useState } from "react";
 import { useDemoContext } from "./DemoContext";
+import { BOOKING_URL } from "@/lib/booking";
 import styles from "./DemoCta.module.css";
-
-const BOOKING_URL = process.env.NEXT_PUBLIC_GOOGLE_BOOKING_URL;
 
 export default function DemoCta() {
   const { state, dispatch } = useDemoContext();
   const [dismissed, setDismissed] = useState(false);
   const [showOverlay, setShowOverlay] = useState(true);
-  const [showBooking, setShowBooking] = useState(false);
 
   function handleExplore() {
     setShowOverlay(false);
@@ -27,7 +25,7 @@ export default function DemoCta() {
       }).catch(() => {});
     }
     setShowOverlay(false);
-    setShowBooking(true);
+    window.open(BOOKING_URL, "_blank", "noopener,noreferrer");
   }
 
   function handleDismissBar() {
@@ -44,7 +42,7 @@ export default function DemoCta() {
         body: JSON.stringify({ leadId: state.leadId, ctaClicked: true }),
       }).catch(() => {});
     }
-    setShowBooking(true);
+    window.open(BOOKING_URL, "_blank", "noopener,noreferrer");
   }
 
   return (
@@ -82,41 +80,8 @@ export default function DemoCta() {
         </div>
       )}
 
-      {/* Booking modal */}
-      {showBooking && (
-        <div className={styles.overlay} onClick={() => setShowBooking(false)}>
-          <div className={styles.bookingCard} onClick={(e) => e.stopPropagation()}>
-            <div className={styles.bookingHeader}>
-              <h3 className={styles.bookingTitle}>Book a Discovery Call</h3>
-              <button
-                className={styles.bookingClose}
-                onClick={() => setShowBooking(false)}
-                aria-label="Close"
-              >
-                ✕
-              </button>
-            </div>
-            {BOOKING_URL ? (
-              <iframe
-                src={BOOKING_URL}
-                className={styles.bookingIframe}
-                title="Book an appointment"
-                loading="lazy"
-              />
-            ) : (
-              <div className={styles.bookingFallback}>
-                <p>Booking calendar is not available right now.</p>
-                <a href="/contact" className={styles.btnPrimary}>
-                  Contact Us Instead
-                </a>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-
       {/* Persistent floating bar */}
-      {!showOverlay && !showBooking && !dismissed && (
+      {!showOverlay && !dismissed && (
         <div className={styles.floatingBar}>
           <span className={styles.floatingText}>
             Ready to see the real thing?

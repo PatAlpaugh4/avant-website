@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.css";
+import { BOOKING_URL } from "@/lib/booking";
 
 const NAV_LINKS = [
     { label: "About", href: "/about" },
@@ -61,9 +62,9 @@ export default function Navbar() {
                     ))}
                 </ul>
 
-                <Link href="/contact#booking" className={styles.cta}>
-                    Book Free Assessment
-                </Link>
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={styles.cta}>
+                    Book Intro Call
+                </a>
 
                 {/* Mobile hamburger */}
                 <button
@@ -90,14 +91,16 @@ export default function Navbar() {
                             {l.label}
                         </Link>
                     ))}
-                    <Link
-                        href="/contact#booking"
+                    <a
+                        href={BOOKING_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="btn btn--primary"
                         onClick={() => setMenuOpen(false)}
                         style={{ marginTop: "1rem", width: "100%" }}
                     >
-                        Book Free Assessment
-                    </Link>
+                        Book Intro Call
+                    </a>
                 </div>
             )}
         </nav>

@@ -21,7 +21,7 @@ export default function Footer() {
                     <p className={styles.copy}>
                         © {new Date().getFullYear()} Avant. All rights reserved.
                     </p>
-                    <p className={styles.location}>Ontario, Canada</p>
+                    <p className={styles.location}>Canada</p>
                 </div>
             </div>
         </footer>

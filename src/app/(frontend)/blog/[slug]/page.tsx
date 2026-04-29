@@ -3,6 +3,7 @@ import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../../../../../keystatic.config";
 import { notFound } from "next/navigation";
 import Image from 'next/image';
+import { BOOKING_URL } from "@/lib/booking";
 import styles from "./post.module.css";
 
 type Props = {
@@ -111,8 +112,8 @@ export default async function BlogPostPage({ params }: Props) {
                         <a href="/blog" className="btn btn--secondary">
                             ← All Posts
                         </a>
-                        <a href="/contact#booking" className="btn btn--primary">
-                            Book Free Assessment
+                        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
+                            Book Intro Call
                         </a>
                     </footer>
                 </div>

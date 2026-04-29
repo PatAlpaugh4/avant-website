@@ -20,10 +20,10 @@ const CASE_STUDIES = [
     },
     {
         slug: "professional-services-client-intake",
-        industry: "Professional Services",
-        headline: "3x faster client onboarding",
+        industry: "Venture Capital",
+        headline: "2 hours saved every morning",
         description:
-            "Streamlined client intake and qualification for a B2B consulting practice.",
+            "Automated daily meeting prep for a venture capital General Partner.",
     },
     {
         slug: "internal-crm-workflow-automation",

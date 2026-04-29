@@ -5,9 +5,9 @@ import BlogCard from "@/components/BlogCard";
 import styles from "./blog.module.css";
 
 export const metadata: Metadata = {
-    title: "AI Insights for Ontario Businesses",
+    title: "AI Insights for Canadian PE, VC & Family Offices",
     description:
-        "Practical AI insights, guides, and case studies for Ontario businesses. Learn how to implement AI that delivers real ROI.",
+        "Practical AI insights, guides, and case studies for Canadian PE, VC & family offices. Learn how to implement AI that delivers real ROI.",
     alternates: { canonical: '/blog' },
 };
 
@@ -43,7 +43,7 @@ export default async function BlogPage() {
                 <div className="container">
                     <p className="section-label">Blog</p>
                     <h1 className="section-title">
-                        AI insights for Ontario businesses.
+                        AI insights for Canadian PE, VC &amp; family offices.
                     </h1>
                     <p className="section-subtitle">
                         Practical guides, case studies, and AI strategies you can

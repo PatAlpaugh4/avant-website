@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import styles from './Hero.module.css';
+import { BOOKING_URL } from '@/lib/booking';
 
 const GlobeBackground = dynamic(() => import('./GlobeBackground'), {
   ssr: false,
@@ -19,14 +20,14 @@ export default function Hero() {
           Go Forward.
         </h1>
         <p className={styles.subheadline}>
-          We design custom CRMs and build software with secure, intelligent AI — tailored to how your business actually works.
-          Real systems. No hype.
+          AI implementation consulting for Canadian private equity, venture capital, and family offices.
+          Simple workflows. Claude enablement. Real systems shipped fast.
         </p>
 
         <div className={styles.actionsBlock}>
-          <Link href="/contact#booking" className={styles.btnPrimary}>
-            Book Free Assessment
-          </Link>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>
+            Book Intro Call
+          </a>
           <Link href="/case-studies" className={styles.btnSecondary}>
             View Case Studies
           </Link>

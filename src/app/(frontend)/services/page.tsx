@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Services from "@/components/Services";
+import { BOOKING_URL } from "@/lib/booking";
 
 export const metadata: Metadata = {
-    title: "AI Implementation Services for Ontario Businesses",
+    title: "AI Implementation Services for Canadian PE, VC & Family Offices",
     description:
-        "AI readiness sessions, implementation sprints, and monthly retainers for Ontario businesses. From free assessment to full AI strategy.",
+        "AI readiness sessions, implementation sprints, and monthly retainers for Canadian PE, VC & family offices. From intro call to full AI strategy.",
     alternates: { canonical: '/services' },
 };
 
@@ -12,7 +13,7 @@ export default function ServicesPage() {
     return (
         <>
             <div style={{ height: "var(--nav-height)" }} />
-            <h1 className="sr-only">AI Implementation Services for Ontario Businesses</h1>
+            <h1 className="sr-only">AI Implementation Services for Canadian PE, VC &amp; Family Offices</h1>
             <Services />
             <section className="section" style={{ textAlign: "center" }}>
                 <div className="container">
@@ -23,11 +24,11 @@ export default function ServicesPage() {
                         className="section-subtitle"
                         style={{ margin: "0 auto var(--space-lg)" }}
                     >
-                        Book a free assessment and we&apos;ll recommend the right
-                        starting point for your business.
+                        Book an intro call and we&apos;ll recommend the right
+                        starting point for your firm.
                     </p>
-                    <a href="/contact#booking" className="btn btn--primary">
-                        Book Free Assessment
+                    <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
+                        Book Intro Call
                     </a>
                 </div>
             </section>
@@ -56,8 +57,7 @@ export default function ServicesPage() {
                                 "name": "AI Opportunity Assessment",
                                 "description": "A diagnostic call to identify your top three automation opportunities with estimated ROI.",
                                 "provider": { "@id": "https://www.avantai.ca/#organization" },
-                                "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
-                                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CAD", "description": "Free" }
+                                "areaServed": { "@type": "AdministrativeArea", "name": "Canada" }
                             }
                         },
                         {
@@ -68,8 +68,7 @@ export default function ServicesPage() {
                                 "name": "AI Readiness Session",
                                 "description": "Half-day hands-on session where your team leaves with working AI tools and a personalized AI Action Plan.",
                                 "provider": { "@id": "https://www.avantai.ca/#organization" },
-                                "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
-                                "offers": { "@type": "Offer", "price": "500", "priceCurrency": "CAD", "description": "$500/person" }
+                                "areaServed": { "@type": "AdministrativeArea", "name": "Canada" }
                             }
                         },
                         {
@@ -80,8 +79,7 @@ export default function ServicesPage() {
                                 "name": "AI Implementation Sprints",
                                 "description": "2-4 week focused engagements that solve one specific workflow problem with a 30-day ROI scorecard.",
                                 "provider": { "@id": "https://www.avantai.ca/#organization" },
-                                "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
-                                "offers": { "@type": "Offer", "price": "2500", "priceCurrency": "CAD", "description": "$2,500–$3,500" }
+                                "areaServed": { "@type": "AdministrativeArea", "name": "Canada" }
                             }
                         },
                         {
@@ -92,8 +90,7 @@ export default function ServicesPage() {
                                 "name": "Monthly AI Retainer",
                                 "description": "Fractional Chief AI Officer support with monthly roadmap reviews, performance monitoring, and team training.",
                                 "provider": { "@id": "https://www.avantai.ca/#organization" },
-                                "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
-                                "offers": { "@type": "Offer", "price": "3000", "priceCurrency": "CAD", "description": "$3,000–$5,000/month" }
+                                "areaServed": { "@type": "AdministrativeArea", "name": "Canada" }
                             }
                         }
                     ]

@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import ScrollReveal from "@/components/ScrollReveal";
 import CaseStudiesHero from "@/components/CaseStudiesHero";
+import { BOOKING_URL } from "@/lib/booking";
 import styles from "./case-studies.module.css";
 
 export const metadata: Metadata = {
-    title: "AI Implementation Case Studies — Ontario Business Results",
+    title: "AI Implementation Case Studies — Canadian PE, VC & Family Offices",
     description:
-        "Real results from real AI engagements. See how Avant helps Ontario businesses save time, reduce errors, and streamline operations.",
+        "Real results from real AI engagements. See how Avant helps Canadian PE, VC & family offices save time, reduce errors, and streamline operations.",
     alternates: { canonical: '/case-studies' },
 };
 
@@ -24,15 +25,17 @@ export default function CaseStudiesPage() {
                             Ready to see results like these?
                         </h2>
                         <p className={styles.ctaText}>
-                            Book a free assessment and we&apos;ll show you
+                            Book an intro call and we&apos;ll show you
                             exactly where AI can make an impact in your
-                            business.
+                            firm.
                         </p>
                         <a
-                            href="/contact#booking"
+                            href={BOOKING_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="btn btn--primary"
                         >
-                            Book Free Assessment
+                            Book Intro Call
                         </a>
                     </ScrollReveal>
                 </div>

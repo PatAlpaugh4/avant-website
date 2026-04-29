@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Team from "@/components/Team";
 
 export const metadata: Metadata = {
-    title: "About Avant — Ontario AI Implementation Agency",
+    title: "About Avant — AI Implementation for Canadian PE, VC & Family Offices",
     description:
-        "Why Ontario businesses choose Avant for AI implementation. Our approach, process, and what makes us different from big consulting firms.",
+        "Why Canadian PE, VC & family offices choose Avant for AI implementation. Our approach, process, and what makes us different from big consulting firms.",
     alternates: { canonical: '/about' },
 };
 

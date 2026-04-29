@@ -6,16 +6,20 @@ import styles from "./FAQ.module.css";
 
 const FAQS = [
     {
-        q: "Why build a custom CRM instead of using Salesforce or HubSpot?",
-        a: "Off-the-shelf CRMs force you to work around their limitations. A custom CRM is built around your actual sales process, with AI that automates the specific tasks your team wastes time on — not generic features you'll never use.",
+        q: "Why hire Avant if we can just use Claude or ChatGPT ourselves?",
+        a: "You can — and you should. The gap isn't access to the model, it's knowing where to point it inside your process. We compress your learning curve from months to weeks and guarantee successful application of AI in your Firm.",
     },
     {
         q: "How do you keep our data secure with AI?",
         a: "We prioritize local and private AI deployments — your data stays on your infrastructure, not on third-party servers. When cloud AI is the right fit, we implement strict access controls, encryption/local redaction, and data isolation so nothing leaks.",
     },
     {
-        q: "How long does a custom build take?",
-        a: "Most projects go from discovery to a working product in 2–6 weeks. We scope aggressively to get a real system in your hands fast, then iterate based on real usage.",
+        q: "How long until we see real work getting done?",
+        a: "Most engagements produce working output in 2–4 weeks. We scope tight, ship fast, and iterate against actual usage — not a six-month roadmap that stalls in committee.",
+    },
+    {
+        q: "What kind of work do you actually do?",
+        a: "Deal sourcing and screening, IC memo drafting, diligence acceleration, LP reporting, portfolio monitoring, internal research workflows — anywhere Claude or Chat GPT can compress hours of analyst time into minutes. We also take on select work in custom CRMs, law firm AI, and ESG reporting where there's clear fit.",
     },
 ];
 

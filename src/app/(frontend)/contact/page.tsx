@@ -3,9 +3,9 @@ import Contact from "@/components/Contact";
 import BookingSection from "@/components/BookingSection";
 
 export const metadata: Metadata = {
-    title: "Book a Free AI Assessment",
+    title: "Book an Intro Call",
     description:
-        "Book a free AI assessment for your Ontario business. Contact Avant to discuss implementation sprints, AI readiness sessions, and AI strategy.",
+        "Book an intro call for your Canadian PE, VC firm, or family office. Contact Avant to discuss AI implementation, Claude enablement, and workflow design.",
     alternates: { canonical: '/contact' },
 };
 

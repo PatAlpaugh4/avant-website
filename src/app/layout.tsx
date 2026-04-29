@@ -6,18 +6,18 @@ export const metadata: Metadata = {
     metadataBase: new URL('https://www.avantai.ca'),
     title: {
         default:
-            "Avant | AI Implementation & Strategy for Ontario Businesses",
+            "Avant | AI Implementation for Canadian PE, VC & Family Offices",
         template: "%s | Avant",
     },
     description:
-        "Avant helps Ontario small and medium businesses move from AI curiosity to measurable operational results.",
+        "Avant is an AI implementation consultancy for Canadian private equity, venture capital, and family offices — simple workflows, Claude enablement, and real systems shipped fast.",
     robots: { index: true, follow: true },
     alternates: { canonical: '/' },
     openGraph: {
         siteName: 'Avant',
         type: 'website',
         locale: 'en_CA',
-        images: [{ url: '/images/og-default.png', width: 1200, height: 630, alt: 'Avant — AI Implementation for Ontario Businesses' }],
+        images: [{ url: '/images/og-default.png', width: 1200, height: 630, alt: 'Avant — AI Implementation for Canadian PE, VC & Family Offices' }],
     },
     twitter: { card: 'summary_large_image' },
 };

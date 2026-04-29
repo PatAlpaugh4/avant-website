@@ -13,17 +13,17 @@ const STEPS = [
     {
         title: "Discover",
         description:
-            "We dig into your operations, pain points, and data flows to understand exactly where custom software and AI can create the most impact.",
+            "We map where your team's hours actually go — deal sourcing, IC prep, LP reporting, portfolio monitoring — and pinpoint exactly where AI can create the most leverage.",
     },
     {
         title: "Design",
         description:
-            "We architect your CRM or application from the ground up — AI-native, secure by default, and shaped around how your team actually works.",
+            "We architect simple, secure AI workflows around your real process. No bloated platforms. No \"AI strategy\" decks. Just systems your team will actually use.",
     },
     {
         title: "Deliver",
         description:
-            "We build, test, and launch your system with hands-on training. You get production-ready software, not a prototype.",
+            "We deploy, train your team hands-on, and stay close until it's adopted. You get leverage through automation, not a pilot that dies out or a forgotten and underused Saas subscription.",
     },
 ];
 
@@ -41,8 +41,7 @@ export default function WhatWeDo() {
                         Discover. Design. Deliver.
                     </h2>
                     <p className={styles.subtitle}>
-                        From first conversation to production-ready software —
-                        custom-built for how your business actually runs.
+                        From first conversation to AI inside your investment process.
                     </p>
                 </ScrollReveal>
 
