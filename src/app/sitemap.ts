@@ -49,7 +49,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/case-studies/professional-services-client-intake`,
+            url: `${baseUrl}/case-studies/vc-meeting-prep`,
             lastModified: new Date('2026-03-23'),
             changeFrequency: 'monthly',
             priority: 0.7,

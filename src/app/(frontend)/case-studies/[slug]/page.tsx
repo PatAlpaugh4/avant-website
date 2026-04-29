@@ -19,7 +19,7 @@ const CASE_STUDIES = [
             "The firm reclaimed over 10 hours per week of billable time, reduced document processing errors by 85%, and improved client response times from days to hours.",
     },
     {
-        slug: "professional-services-client-intake",
+        slug: "vc-meeting-prep",
         industry: "Venture Capital",
         headline: "2 hours saved every morning",
         description:

@@ -19,7 +19,7 @@ const CASE_STUDIES = [
             "Automated document intake and contract review for a mid-size Ontario law firm.",
     },
     {
-        slug: "professional-services-client-intake",
+        slug: "vc-meeting-prep",
         industry: "Venture Capital",
         headline: "2 hours saved every morning",
         description:
