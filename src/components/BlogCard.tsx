@@ -22,17 +22,36 @@ export default function BlogCard({ post }: BlogCardProps) {
         })
         : null;
 
+    const isVideoCover = post.coverImage?.endsWith(".mp4");
+    const coverPoster = isVideoCover
+        ? post.coverImage!.replace(/\.mp4$/, ".poster.webp")
+        : post.coverImage;
+
     return (
         <a href={`/blog/${post.slug}`} className={`card ${styles.card}`}>
             {post.coverImage && (
                 <div className={styles.imageWrap}>
-                    <Image
-                        src={post.coverImage}
-                        alt={post.title}
-                        width={600}
-                        height={340}
-                        className={styles.image}
-                    />
+                    {isVideoCover ? (
+                        <video
+                            src={post.coverImage}
+                            poster={coverPoster!}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            width={600}
+                            height={340}
+                            className={styles.image}
+                        />
+                    ) : (
+                        <Image
+                            src={post.coverImage}
+                            alt={post.title}
+                            width={600}
+                            height={340}
+                            className={styles.image}
+                        />
+                    )}
                 </div>
             )}
             <div className={styles.body}>

@@ -23,6 +23,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     if (!post) return { title: "Post Not Found" };
 
+    const ogImage = post.coverImage?.endsWith(".mp4")
+        ? post.coverImage.replace(/\.mp4$/, ".poster.webp")
+        : post.coverImage;
+
     return {
         title: post.title,
         description: post.excerpt || `${typeof post.title === "string" ? post.title : slug} — Avant Blog`,
@@ -33,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             type: 'article',
             publishedTime: post.publishedAt || undefined,
             authors: post.author ? [post.author] : undefined,
-            images: post.coverImage ? [{ url: post.coverImage, width: 1200, height: 630 }] : undefined,
+            images: ogImage ? [{ url: ogImage, width: 1200, height: 630 }] : undefined,
         },
     };
 }
@@ -53,6 +57,11 @@ export default async function BlogPostPage({ params }: Props) {
         : null;
 
     const title = typeof post.title === "string" ? post.title : slug;
+
+    const isVideoCover = post.coverImage?.endsWith(".mp4");
+    const coverPoster = isVideoCover
+        ? post.coverImage!.replace(/\.mp4$/, ".poster.webp")
+        : post.coverImage;
 
     // Render Markdoc content to React nodes
     const { default: Markdoc } = await import("@markdoc/markdoc");
@@ -95,14 +104,28 @@ export default async function BlogPostPage({ params }: Props) {
 
                     {post.coverImage && (
                         <div className={styles.coverWrap}>
-                            <Image
-                                src={post.coverImage}
-                                alt={title}
-                                width={1200}
-                                height={630}
-                                className={styles.coverImage}
-                                priority
-                            />
+                            {isVideoCover ? (
+                                <video
+                                    src={post.coverImage}
+                                    poster={coverPoster!}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    width={1200}
+                                    height={630}
+                                    className={styles.coverImage}
+                                />
+                            ) : (
+                                <Image
+                                    src={post.coverImage}
+                                    alt={title}
+                                    width={1200}
+                                    height={630}
+                                    className={styles.coverImage}
+                                    priority
+                                />
+                            )}
                         </div>
                     )}
 
@@ -128,7 +151,7 @@ export default async function BlogPostPage({ params }: Props) {
                     "headline": title,
                     "description": post.excerpt || "",
                     "url": `https://www.avantai.ca/blog/${slug}`,
-                    "image": post.coverImage ? `https://www.avantai.ca${post.coverImage}` : undefined,
+                    "image": coverPoster ? `https://www.avantai.ca${coverPoster}` : undefined,
                     "datePublished": post.publishedAt,
                     "dateModified": post.publishedAt,
                     "author": {
