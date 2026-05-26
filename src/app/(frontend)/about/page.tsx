@@ -35,9 +35,21 @@ export default function AboutPage() {
                         "familyName": "Alpaugh",
                         "honorificSuffix": "MBA",
                         "jobTitle": "Founder & CEO",
-                        "description": "Founder and CEO of Avant, an AI implementation consultancy for Canadian private equity, venture capital, and family offices. Background as an analyst in Canadian PE and VC, and as the operator who introduced an AI-powered inventory counting solution to the largest restaurant groups in Canada.",
+                        "description": "Founder and CEO of Avant, an AI implementation consultancy for Canadian private equity, venture capital, and family offices. Former analyst at Massey Capital (Canadian PE) and Redstick Ventures (VC); led the Canadian rollout of Nomad Go's Spatial AI inventory product to the country's largest restaurant brands before founding Avant.",
                         "image": "https://www.avantai.ca/images/team/patrick_headshot.jpeg",
                         "worksFor": { "@type": "Organization", "@id": "https://www.avantai.ca/#organization" },
+                        "alumniOf": [
+                            {
+                                "@type": "EducationalOrganization",
+                                "name": "University of Windsor — Odette School of Business",
+                                "sameAs": "https://www.uwindsor.ca/odette/"
+                            },
+                            {
+                                "@type": "EducationalOrganization",
+                                "name": "Wilfrid Laurier University",
+                                "sameAs": "https://www.wlu.ca/"
+                            }
+                        ],
                         "url": "https://www.avantai.ca/about",
                         "address": {
                             "@type": "PostalAddress",
@@ -52,7 +64,11 @@ export default function AboutPage() {
                             "Venture capital",
                             "Family offices",
                             "Deal-team operations",
-                            "AI workflow design"
+                            "AI workflow design",
+                            "Investor memos",
+                            "Due diligence",
+                            "Restaurant technology",
+                            "Spatial AI"
                         ],
                         "knowsLanguage": "en",
                         "nationality": { "@type": "Country", "name": "Canada" },

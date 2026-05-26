@@ -44,7 +44,7 @@ export async function GET() {
 - Monthly AI Retainer: fractional Chief AI Officer support for ongoing roadmap, monitoring, and team training.
 
 ## Founder
-Patrick Alpaugh, MBA — Founder & CEO. Background: analyst in both Canadian private equity and venture capital, plus sales and operations roles inside PE/VC-backed companies. Most recently introduced an AI-powered inventory counting solution to the largest restaurant groups in Canada and personally owned every account.
+Patrick Alpaugh, MBA — Founder & CEO. Former analyst at Massey Capital (Canadian PE) and Redstick Ventures (VC), where he ran a 450+ company pipeline and authored investor-grade memos. Subsequently led the Canadian rollout of Nomad Go's Spatial AI inventory product to the largest restaurant brands in the country. Founded Avant to bring that same analyst rigor and operator instinct to Canadian PE, VC, and family offices.
 
 ## Pages
 - Homepage: ${baseUrl}
