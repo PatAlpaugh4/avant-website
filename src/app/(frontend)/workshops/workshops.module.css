@@ -1,0 +1,234 @@
+.actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin-top: var(--space-lg);
+}
+
+.proof {
+    margin-top: var(--space-md);
+    color: var(--ls-ivory-muted);
+    font-size: var(--fs-small);
+    letter-spacing: 0.01em;
+}
+
+/* ── Why: stat band (hairline-separated) ── */
+.statBand {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--glass-border);
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    padding-left: var(--space-lg);
+    border-left: 1px solid var(--glass-border);
+}
+
+.statItem:first-child {
+    padding-left: 0;
+    border-left: none;
+}
+
+.statNum {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    font-weight: var(--fw-light);
+    letter-spacing: -0.02em;
+    color: var(--ls-accent);
+    line-height: 1;
+    margin-bottom: var(--space-sm);
+}
+
+.statLabel {
+    font-family: var(--font-display);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-semibold);
+    color: var(--ls-ivory);
+    letter-spacing: 0.01em;
+    margin-bottom: var(--space-md);
+}
+
+.statBody {
+    color: var(--ls-ivory-muted);
+    line-height: 1.6;
+    font-size: var(--fs-small);
+    margin: 0;
+}
+
+.statsSource {
+    margin-top: var(--space-md);
+    color: var(--ls-ivory-muted);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.01em;
+}
+
+/* ── What we do ── */
+.doGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.do {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-lg);
+    border: 1px solid var(--glass-border);
+    border-top: 2px solid var(--ls-accent);
+    border-radius: var(--border-radius-lg);
+    background: var(--ls-charcoal-light);
+    transition: border-color var(--duration-fast) var(--ease-out),
+        transform var(--duration-fast) var(--ease-out);
+}
+
+.do:hover {
+    border-color: rgba(74, 144, 217, 0.25);
+    border-top-color: var(--ls-accent);
+    transform: translateY(-4px);
+}
+
+.doHead {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.doMark {
+    display: inline-flex;
+    color: var(--ls-accent);
+    flex-shrink: 0;
+}
+
+.doMark svg {
+    width: 20px;
+    height: 20px;
+}
+
+.doTitle {
+    font-size: var(--fs-h3);
+    margin: 0;
+}
+
+.doBody {
+    color: var(--ls-ivory-muted);
+    line-height: 1.6;
+    font-size: var(--fs-small);
+    margin: 0;
+}
+
+/* ── By role ── */
+.roleGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.role {
+    padding: var(--space-lg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-lg);
+    border-top: 2px solid var(--ls-accent);
+    background: var(--ls-charcoal-light);
+}
+
+.roleName {
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    color: var(--ls-accent);
+    margin-bottom: var(--space-xs);
+}
+
+.roleWork {
+    color: var(--ls-ivory-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ── Outcome ── */
+.outcome {
+    max-width: 760px;
+    margin: var(--space-md) auto 0;
+    padding: var(--space-2xl) var(--space-lg);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid rgba(74, 144, 217, 0.25);
+    text-align: center;
+}
+
+.outcomeTitle {
+    font-size: var(--fs-h2);
+    margin: var(--space-sm) 0 var(--space-lg);
+}
+
+.outcomeList {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 54ch;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    text-align: left;
+}
+
+.outcomeList li {
+    display: flex;
+    gap: var(--space-sm);
+    align-items: flex-start;
+    color: var(--ls-ivory-muted);
+    line-height: 1.6;
+}
+
+.check {
+    flex-shrink: 0;
+    margin-top: 0.25em;
+    color: var(--ls-accent);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .statBand {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .statItem {
+        padding-left: 0;
+        border-left: none;
+        padding-top: var(--space-lg);
+        border-top: 1px solid var(--glass-border);
+    }
+
+    .statItem:first-child {
+        padding-top: 0;
+        border-top: none;
+    }
+
+    .doGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .doGrid,
+    .roleGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .do,
+    .role,
+    .outcome {
+        padding: var(--space-md);
+    }
+
+    .outcome {
+        padding: var(--space-lg) var(--space-md);
+    }
+}

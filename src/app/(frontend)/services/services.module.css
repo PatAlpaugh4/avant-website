@@ -1,0 +1,36 @@
+/* Full-bleed Earth backdrop across the top (hero + lifecycle) of the AI Audit page */
+.earthTop {
+    position: relative;
+}
+
+.earthBg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: clamp(1240px, 158vh, 1880px);
+    z-index: 0;
+    pointer-events: none;
+    /* fade the Earth into the charcoal before the deliverable cards */
+    -webkit-mask-image: linear-gradient(to bottom, #000 86%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 86%, transparent 100%);
+}
+
+/* Subtle dark scrim for text legibility — a gradient, NOT a blur */
+.earthScrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(18, 18, 22, 0.70) 0%,
+        rgba(18, 18, 22, 0.42) 38%,
+        rgba(18, 18, 22, 0.48) 74%,
+        rgba(18, 18, 22, 0.82) 100%
+    );
+}
+
+.earthContent {
+    position: relative;
+    z-index: 1;
+}

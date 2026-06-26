@@ -27,8 +27,9 @@ const TEAM = [
     location: "London, Ontario",
     role: "Founder & CEO",
     bio: [
-      "An analyst at Massey Capital (Canadian PE) and Redstick Ventures (VC) — where he ran a 450+ company pipeline and wrote investor-grade memos for LPs — Patrick then crossed to the operator side, leading the Canadian rollout of Nomad Go's Spatial AI inventory product to the largest restaurant brands in the country.",
-      "He founded Avant to bring that same analyst rigor and operator instinct to Canadian PE, VC, and family offices: working AI workflows shipped in 2–4 weeks, scoped around the real investment process — deal sourcing, diligence, IC prep, LP reporting, and portfolio monitoring.",
+      "I'm the founder of Avant — an AI implementation firm built for private equity, venture capital, and family offices. We help save time across the full investment lifecycle — empowering analysts to master AI and work within your existing systems. We also help firms use AI as a lever of value creation within their portfolio companies by building custom software and workflows.",
+      "I started Avant after spending the last few years on both sides of the deal table. As an analyst at Massey Capital and Redstick Ventures, I built models, ran diligence, and screened hundreds of companies. As Sales & Customer Success Lead for Nomad Go, I introduced a spatial-AI product to major restaurant brands.",
+      "Our mission is simple and urgent: enable PE, VC, and family offices to capture the AI edge — faster, smarter, and with greater return than anyone else thought possible.",
     ],
     image: "/images/team/patrick_headshot.jpeg",
   },

@@ -17,14 +17,24 @@
     border-bottom: 1px solid var(--glass-border);
 }
 
+/* Home page — a solid dark bar behind the nav over the hero */
+.home {
+    background: rgba(18, 18, 22, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+/* Three-zone layout: logo (left) · links (center) · contact (right) */
 .inner {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
-    position: relative;
+    gap: var(--space-md);
 }
 
 .logo {
+    justify-self: start;
     font-family: var(--font-display);
     font-size: 1.5rem;
     font-weight: var(--fw-bold);
@@ -34,17 +44,16 @@
 }
 
 .links {
+    justify-self: center;
     display: flex;
-    gap: var(--space-xl);
+    align-items: center;
+    gap: var(--space-md);
     list-style: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .link {
     font-family: var(--font-display);
-    font-size: var(--fs-xs);
+    font-size: var(--fs-small);
     font-weight: var(--fw-medium);
     letter-spacing: var(--ls-wide);
     text-transform: uppercase;
@@ -52,15 +61,17 @@
     text-decoration: none;
     transition: color var(--duration-fast) var(--ease-out);
     position: relative;
+    white-space: nowrap;
 }
 
 .link::after {
     content: "";
     position: absolute;
-    bottom: -4px;
+    bottom: -6px;
     left: 0;
     width: 0;
-    height: 1px;
+    height: 2px;
+    border-radius: 2px;
     background: var(--ls-accent);
     transition: width var(--duration-normal) var(--ease-out);
 }
@@ -74,35 +85,40 @@
 }
 
 .linkActive {
-    color: var(--ls-accent) !important;
+    color: var(--ls-ivory) !important;
 }
 
 .linkActive::after {
     width: 100% !important;
 }
 
+/* Contact pill — the primary nav action */
 .cta {
+    justify-self: end;
     font-family: var(--font-display);
-    font-size: var(--fs-xs);
-    font-weight: var(--fw-medium);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-semibold);
     letter-spacing: var(--ls-wide);
     text-transform: uppercase;
-    color: var(--ls-ivory-muted);
+    color: var(--ls-ivory);
     text-decoration: none;
-    padding: 0.5rem 1.25rem;
-    border: 1px solid var(--glass-border);
+    padding: 0.55rem 1.5rem;
+    border: 1px solid rgba(74, 144, 217, 0.45);
     border-radius: 100px;
+    background: rgba(74, 144, 217, 0.08);
     transition: all var(--duration-fast) var(--ease-out);
 }
 
 .cta:hover {
     color: var(--ls-white);
     border-color: var(--ls-accent);
-    background: rgba(74, 144, 217, 0.08);
+    background: rgba(74, 144, 217, 0.18);
+    transform: translateY(-1px);
 }
 
 /* Hamburger */
 .burger {
+    justify-self: end;
     display: none;
     flex-direction: column;
     gap: 5px;
@@ -164,7 +180,11 @@
     color: var(--ls-accent);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 940px) {
+    .inner {
+        display: flex;
+        justify-content: space-between;
+    }
 
     .links,
     .cta {

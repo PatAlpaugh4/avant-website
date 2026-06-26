@@ -5,9 +5,9 @@ import BlogCard from "@/components/BlogCard";
 import styles from "./blog.module.css";
 
 export const metadata: Metadata = {
-    title: "AI Insights for Canadian PE, VC & Family Offices",
+    title: "AI Insights for PE, VC & Family Offices",
     description:
-        "Practical AI insights, guides, and case studies for Canadian PE, VC & family offices. Learn how to implement AI that delivers real ROI.",
+        "Practical AI insights, guides, and case studies for PE, VC & family offices. Learn how to implement AI that delivers real ROI.",
     alternates: { canonical: '/blog' },
 };
 
@@ -41,9 +41,9 @@ export default async function BlogPage() {
             <div style={{ height: "var(--nav-height)" }} />
             <section className={`section ${styles.blogSection}`}>
                 <div className="container">
-                    <p className="section-label">Blog</p>
+                    <p className="section-label">Insights</p>
                     <h1 className="section-title">
-                        AI insights for Canadian PE, VC &amp; family offices.
+                        AI insights for PE, VC &amp; family offices.
                     </h1>
                     <p className="section-subtitle">
                         Practical guides, case studies, and AI strategies you can

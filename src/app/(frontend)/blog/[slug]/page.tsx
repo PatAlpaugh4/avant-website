@@ -3,7 +3,7 @@ import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../../../../../keystatic.config";
 import { notFound } from "next/navigation";
 import Image from 'next/image';
-import { BOOKING_URL } from "@/lib/booking";
+import { mailto } from "@/lib/contact";
 import styles from "./post.module.css";
 
 type Props = {
@@ -49,7 +49,7 @@ export default async function BlogPostPage({ params }: Props) {
     if (!post || post.draft) notFound();
 
     const publishedDate = post.publishedAt
-        ? new Date(post.publishedAt).toLocaleDateString("en-CA", {
+        ? new Date(post.publishedAt).toLocaleDateString("en-US", {
             year: "numeric",
             month: "long",
             day: "numeric",
@@ -135,8 +135,8 @@ export default async function BlogPostPage({ params }: Props) {
                         <a href="/blog" className="btn btn--secondary">
                             ← All Posts
                         </a>
-                        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
-                            Book Intro Call
+                        <a href={mailto("Project Inquiry")} className="btn btn--primary">
+                            Email Us
                         </a>
                     </footer>
                 </div>

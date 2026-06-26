@@ -102,6 +102,17 @@
     opacity: 0;
 }
 
+.proof {
+    font-family: var(--font-body);
+    font-size: var(--fs-small);
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    color: var(--ls-ivory-muted);
+    margin-top: var(--space-md);
+    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+    opacity: 0;
+}
+
 .btnPrimary {
     background: var(--ls-white);
     color: var(--ls-charcoal);
@@ -162,5 +173,11 @@
     .btnSecondary {
         width: 100%;
         text-align: center;
+    }
+
+    .proof {
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

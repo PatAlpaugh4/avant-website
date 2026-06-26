@@ -6,11 +6,11 @@ export const metadata: Metadata = {
     metadataBase: new URL('https://www.avantai.ca'),
     title: {
         default:
-            "Avant | AI Implementation for Canadian PE, VC & Family Offices",
+            "AI Audits & Implementation for PE, VC & Family Offices | Avant",
         template: "%s | Avant",
     },
     description:
-        "Avant is an AI implementation consultant for Canadian private equity, venture capital, and family offices. We design Claude-powered workflows that compress diligence, IC prep, LP reporting, and portfolio monitoring — shipped in 2–4 weeks.",
+        "Rigorous, fixed-scope AI audits for private equity, venture capital, and family offices — plus fully custom software and hands-on workshops. Built around how your firm actually works, shipped in weeks, not quarters.",
     robots: { index: true, follow: true },
     alternates: { canonical: '/' },
     verification: {
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     openGraph: {
         siteName: 'Avant',
         type: 'website',
-        locale: 'en_CA',
-        images: [{ url: '/images/og-default.png', width: 1200, height: 630, alt: 'Avant — AI Implementation for Canadian PE, VC & Family Offices' }],
+        locale: 'en_US',
+        images: [{ url: '/images/og-default.png', width: 1200, height: 630, alt: 'Avant — AI Audits & Implementation for PE, VC & Family Offices' }],
     },
     twitter: { card: 'summary_large_image' },
 };
@@ -31,7 +31,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en-CA">
+        <html lang="en">
             <body>
                 {children}
                 <Analytics />

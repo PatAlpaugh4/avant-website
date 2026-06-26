@@ -4,7 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import styles from './Hero.module.css';
-import { BOOKING_URL } from '@/lib/booking';
 
 const GlobeBackground = dynamic(() => import('./GlobeBackground'), {
   ssr: false,
@@ -20,18 +19,18 @@ export default function Hero() {
           Go Forward.
         </h1>
         <p className={styles.subheadline}>
-          AI implementation consulting for Canadian private equity, venture capital, and family offices.
-          Simple workflows. Claude enablement. Working systems shipped in 2–4 weeks.
+          Put AI where the ROI is &mdash; for private equity, venture capital, and family offices, built around how your firm actually works.
         </p>
 
         <div className={styles.actionsBlock}>
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>
-            Book Intro Call
-          </a>
-          <Link href="/case-studies" className={styles.btnSecondary}>
-            View Case Studies
+          <Link href="/services" className={styles.btnPrimary}>
+            See the AI Audit
+          </Link>
+          <Link href="/#what-we-do" className={styles.btnSecondary}>
+            See What We Do
           </Link>
         </div>
+        <p className={styles.proof}>Find your highest-ROI AI · Build the systems that create value · Make your team fluent.</p>
       </div>
     </section>
   );

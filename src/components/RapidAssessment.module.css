@@ -1,54 +1,286 @@
 .section {
     background: var(--ls-charcoal);
-    padding-bottom: 0;
 }
 
-.card {
+/* ── Marquee deliverables ── */
+.deliverables {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
     margin-top: var(--space-xl);
-    max-width: 760px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.header {
+.deliverable {
     display: flex;
-    gap: var(--space-md);
-    align-items: flex-start;
-    margin-bottom: var(--space-md);
+    flex-direction: column;
+    padding: var(--space-lg);
+    border: 1px solid var(--glass-border);
+    border-top: 2px solid var(--ls-accent);
+    border-radius: var(--border-radius-lg);
+    background: var(--ls-charcoal-light);
+    transition: border-color var(--duration-fast) var(--ease-out),
+        transform var(--duration-fast) var(--ease-out);
 }
 
-.label {
+.deliverable:hover {
+    border-color: rgba(74, 144, 217, 0.25);
+    border-top-color: var(--ls-accent);
+    transform: translateY(-4px);
+}
+
+.delHead {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.delMark {
+    display: inline-flex;
+    color: var(--ls-accent);
+    flex-shrink: 0;
+}
+
+.delMark svg {
+    width: 20px;
+    height: 20px;
+}
+
+.delTitle {
+    font-size: var(--fs-h3);
+    margin: 0;
+}
+
+.delBody {
+    color: var(--ls-ivory-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ── Methodology ── */
+.method {
+    margin-top: var(--space-2xl);
+}
+
+.methodTitle {
+    font-size: var(--fs-h3);
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.step {
+    padding: var(--space-lg);
+    border: 1px solid var(--glass-border);
+    border-top: 2px solid var(--ls-accent);
+    border-radius: var(--border-radius-lg);
+    background: var(--ls-charcoal-light);
+}
+
+.stepTop {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.stepNum {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(74, 144, 217, 0.12);
+    color: var(--ls-accent);
+    font-family: var(--font-display);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-small);
+    flex-shrink: 0;
+}
+
+.stepWeek {
     font-family: var(--font-display);
     font-size: var(--fs-xs);
     font-weight: var(--fw-semibold);
-    letter-spacing: var(--ls-widest);
+    letter-spacing: var(--ls-wide);
     text-transform: uppercase;
-    color: var(--ls-accent);
-    background: rgba(74, 144, 217, 0.1);
-    padding: 0.3rem 0.8rem;
-    border-radius: 30px;
-    flex-shrink: 0;
-    margin-top: 2px;
+    color: var(--ls-ivory-muted);
 }
 
-.title {
+.stepTitle {
     font-size: var(--fs-h3);
     margin-bottom: var(--space-xs);
 }
 
-.timeline {
+.stepBody {
+    color: var(--ls-ivory-muted);
+    line-height: 1.6;
+    margin: 0;
+    font-size: var(--fs-small);
+}
+
+/* ── Tiers (no prices) ── */
+.tiers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-2xl);
+    align-items: stretch;
+}
+
+.tier {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: var(--space-lg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-lg);
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.02),
+        rgba(74, 144, 217, 0.04)
+    );
+    transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.tier:hover {
+    border-color: rgba(74, 144, 217, 0.3);
+}
+
+.tierFeatured {
+    position: relative;
+    border-color: rgba(74, 144, 217, 0.5);
+    box-shadow: var(--shadow-accent);
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    left: var(--space-lg);
+    transform: translateY(-50%);
+    background: var(--ls-accent);
+    color: var(--ls-charcoal);
+    text-transform: uppercase;
+    font-family: var(--font-display);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-wide);
+    padding: 0.3rem 0.9rem;
+    border-radius: 30px;
+    white-space: nowrap;
+}
+
+.tierHead {
+    margin-bottom: var(--space-md);
+}
+
+.tierName {
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    margin-bottom: var(--space-xs);
+}
+
+.tierAudience {
+    display: block;
     color: var(--ls-ivory-muted);
     font-size: var(--fs-small);
 }
 
-.desc {
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.features li {
+    display: flex;
+    gap: var(--space-sm);
+    align-items: flex-start;
     color: var(--ls-ivory-muted);
-    margin-bottom: var(--space-md);
+    line-height: 1.6;
+    font-size: var(--fs-body);
+}
+
+.check {
+    flex-shrink: 0;
+    margin-top: 0.25em;
+    color: var(--ls-accent);
+}
+
+.tierFoot {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.priceNote {
+    font-family: var(--font-display);
+    font-size: var(--fs-small);
+    color: var(--ls-ivory-muted);
+    letter-spacing: var(--ls-wide);
+}
+
+.cta {
+    width: 100%;
+    text-align: center;
+}
+
+/* ── Fee-credit banner & security note ── */
+.feeBanner {
+    margin: var(--space-2xl) auto 0;
+    max-width: 70ch;
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid rgba(74, 144, 217, 0.25);
+    text-align: center;
+    color: var(--ls-ivory-muted);
+    line-height: 1.6;
+}
+
+.securityNote {
+    margin-top: var(--space-lg);
+    display: flex;
+    gap: var(--space-xs);
+    align-items: center;
+    justify-content: center;
+    color: var(--ls-ivory-muted);
+    font-size: var(--fs-small);
+    text-align: center;
+}
+
+.securityNote svg {
+    flex-shrink: 0;
+    color: var(--ls-accent);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .deliverables,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .tiers {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
 }
 
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        gap: var(--space-xs);
+    .deliverable,
+    .step,
+    .tier,
+    .feeBanner {
+        padding: var(--space-md);
     }
 }

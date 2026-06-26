@@ -15,7 +15,7 @@ type BlogCardProps = {
 
 export default function BlogCard({ post }: BlogCardProps) {
     const date = post.publishedAt
-        ? new Date(post.publishedAt).toLocaleDateString("en-CA", {
+        ? new Date(post.publishedAt).toLocaleDateString("en-US", {
             year: "numeric",
             month: "short",
             day: "numeric",

@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Contact from "@/components/Contact";
-import BookingSection from "@/components/BookingSection";
 
 export const metadata: Metadata = {
-    title: "Book an Intro Call",
+    title: "Contact",
     description:
-        "Book an intro call for your Canadian PE, VC firm, or family office. Contact Avant to discuss AI implementation, Claude enablement, and workflow design.",
+        "Contact Avant about AI audits, custom software, and workshops for private equity, venture capital, and family offices. Email patricka@avantai.ca or call (705) 984-5337.",
     alternates: { canonical: '/contact' },
 };
 
@@ -13,7 +12,6 @@ export default function ContactPage() {
     return (
         <>
             <div style={{ height: "var(--nav-height)" }} />
-            <BookingSection />
             <Contact />
             <script
                 type="application/ld+json"

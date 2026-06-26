@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ScrollReveal from "@/components/ScrollReveal";
 import CaseStudyHeader from "@/components/CaseStudyHeader";
-import { BOOKING_URL } from "@/lib/booking";
+import { mailto } from "@/lib/contact";
 import styles from "./case-study.module.css";
 
 const CASE_STUDIES = [
@@ -11,9 +11,9 @@ const CASE_STUDIES = [
         industry: "Private Equity",
         headline: "Partner time back, every NDA",
         description:
-            "Contract analytics for a Canadian private equity firm — clause-by-clause first-pass NDA mark-ups in the partner's voice, deployed in two weeks.",
+            "Contract analytics for a private equity firm — clause-by-clause first-pass NDA mark-ups in the partner's voice, deployed in two weeks.",
         situation:
-            "A Canadian private equity firm was bottlenecked on partner availability for NDA review. Every incoming teaser stalled until the partner could redline the NDA personally — the firm's most strategic resource consumed by a scaled, pattern-based task at the front of the diligence cycle. The deal pipeline paid the price.",
+            "A private equity firm was bottlenecked on partner availability for NDA review. Every incoming teaser stalled until the partner could redline the NDA personally — the firm's most strategic resource consumed by a scaled, pattern-based task at the front of the diligence cycle. The deal pipeline paid the price.",
         built: "We deployed an NDA Review Agent inside the firm's secure Claude environment, trained on its NDA reference corpus and the partner's negotiated positions. The agent runs clause-by-clause contract analytics against the firm's standard positions and outputs a tracked-changes Word mark-up in house style — ready for partner review in minutes. Associates invoke the skill on incoming NDAs without touching code or prompts. A 30-day calibration loop folds the partner's edits back into the reference set after every live deal, converging the agent's output on the partner's voice over time.",
         outcome:
             "First-pass mark-ups now match the partner's preferred positions on the majority of material clauses, and the partner's per-NDA review compresses from a full read-and-redline to a quick approval pass — targeting 50% partner time saved on every NDA. The agent stands as the firm's entry point into a broader AI-enabled diligence stack: CIM triage, IC memo drafting, and portfolio reporting on the roadmap.",
@@ -135,12 +135,10 @@ export default async function CaseStudyPage({ params }: Props) {
                                 ← All Case Studies
                             </a>
                             <a
-                                href={BOOKING_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                href={mailto()}
                                 className="btn btn--primary"
                             >
-                                Book Intro Call
+                                Email Us
                             </a>
                         </footer>
                     </ScrollReveal>

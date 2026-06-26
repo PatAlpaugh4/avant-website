@@ -16,7 +16,7 @@ const CASE_STUDIES = [
         industry: "Private Equity",
         headline: "Partner time back, every NDA",
         description:
-            "Contract analytics that compress NDA review for a Canadian PE firm.",
+            "Contract analytics that compress NDA review for a PE firm.",
     },
     {
         slug: "vc-meeting-prep",

@@ -1,5 +1,5 @@
 import styles from "./Services.module.css";
-import { BOOKING_URL } from "@/lib/booking";
+import { mailto } from "@/lib/contact";
 
 const STAGES = [
     {
@@ -7,36 +7,28 @@ const STAGES = [
         title: "Discovery & Scoping",
         timeline: "1–2 weeks",
         description:
-            "We learn your business inside and out — your workflows, pain points, data landscape, and goals. You get a detailed project scope and architecture proposal, so you know exactly what we're building and why.",
-        cta: "Book a Discovery Call",
-        ctaHref: BOOKING_URL,
+            "We learn your workflows, data, and goals, then hand you a clear scope and architecture — so you know exactly what we're building and why.",
     },
     {
         label: "Design",
         title: "System Architecture & UX",
         timeline: "2–3 weeks",
         description:
-            "We design your CRM or application from the ground up — data models, AI integration points, user flows, and security architecture. You review interactive prototypes before a single line of production code is written.",
-        cta: "Learn More",
-        ctaHref: BOOKING_URL,
+            "We design data models, user flows, and security from the ground up, with AI only where it helps. You review interactive prototypes before we write production code.",
     },
     {
         label: "Build",
-        title: "Development & AI Integration",
+        title: "Development & Integration",
         timeline: "4–8 weeks",
         description:
-            "We build your system with production-grade code, integrate AI where it creates real value — smart automation, intelligent search, predictive insights — and deploy on secure infrastructure you control.",
-        cta: "Get a Proposal",
-        ctaHref: BOOKING_URL,
+            "We build with production-grade code, add AI only where it earns its place, and deploy on infrastructure you control.",
     },
     {
         label: "Launch",
         title: "Deployment & Training",
         timeline: "1–2 weeks",
         description:
-            "We launch your system, train your team hands-on, and ensure everything runs smoothly in production. Post-launch support included to handle any adjustments as your team gets up to speed.",
-        cta: "Start a Project",
-        ctaHref: BOOKING_URL,
+            "We launch, train your team hands-on, and stay on for post-launch support as everyone gets up to speed.",
     },
 ];
 
@@ -44,7 +36,7 @@ export default function Services() {
     return (
         <section className={`section ${styles.services}`} id="services">
             <div className="container">
-                <p className="section-label">Services</p>
+                <p className="section-label">How we build</p>
                 <h2 className="section-title">
                     From concept to production.
                 </h2>
@@ -77,13 +69,15 @@ export default function Services() {
                                 </div>
 
                                 <p className={styles.stageDesc}>{stage.description}</p>
-
-                                <a href={stage.ctaHref} target="_blank" rel="noopener noreferrer" className="btn btn--secondary">
-                                    {stage.cta}
-                                </a>
                             </div>
                         </div>
                     ))}
+                </div>
+
+                <div style={{ textAlign: "center", marginTop: "var(--space-xl)" }}>
+                    <a href={mailto("Custom Software Inquiry")} className="btn btn--primary">
+                        Start a Project
+                    </a>
                 </div>
             </div>
         </section>

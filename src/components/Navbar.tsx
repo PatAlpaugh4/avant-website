@@ -4,18 +4,20 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.css";
-import { BOOKING_URL } from "@/lib/booking";
+import { mailto } from "@/lib/contact";
 
 const NAV_LINKS = [
+    { label: "AI Audit", href: "/services" },
+    { label: "Custom Software", href: "/software" },
+    { label: "Workshops", href: "/workshops" },
     { label: "About", href: "/about" },
-    { label: "Case Studies", href: "/case-studies" },
-    { label: "Blog", href: "/blog" },
 ];
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const pathname = usePathname();
+    const isHome = pathname === "/";
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 40);
@@ -42,7 +44,7 @@ export default function Navbar() {
     }, [menuOpen]);
 
     return (
-        <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
+        <nav className={`${styles.nav} ${scrolled ? styles.scrolled : isHome ? styles.home : ""}`}>
             <div className={`container ${styles.inner}`}>
                 <Link href="/" className={styles.logo}>
                     AVANT
@@ -62,8 +64,8 @@ export default function Navbar() {
                     ))}
                 </ul>
 
-                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={styles.cta}>
-                    Book Intro Call
+                <a href={mailto()} className={styles.cta}>
+                    Contact
                 </a>
 
                 {/* Mobile hamburger */}
@@ -92,14 +94,12 @@ export default function Navbar() {
                         </Link>
                     ))}
                     <a
-                        href={BOOKING_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href={mailto()}
                         className="btn btn--primary"
                         onClick={() => setMenuOpen(false)}
                         style={{ marginTop: "1rem", width: "100%" }}
                     >
-                        Book Intro Call
+                        Contact
                     </a>
                 </div>
             )}

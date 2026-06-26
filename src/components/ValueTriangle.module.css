@@ -1,0 +1,52 @@
+.svg {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.finEng {
+    fill: #2e2e35;
+    stroke: rgba(255, 255, 255, 0.05);
+    stroke-width: 2;
+}
+
+.opEx {
+    fill: #3d3d47;
+    stroke: rgba(255, 255, 255, 0.05);
+    stroke-width: 2;
+}
+
+.aiApps {
+    fill: rgba(74, 144, 217, 0.32);
+    stroke: rgba(255, 255, 255, 0.05);
+    stroke-width: 2;
+}
+
+.edgeLabel {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    fill: var(--ls-ivory);
+}
+
+.edgeLabelStrong {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    fill: var(--ls-white);
+}
+
+.hub {
+    fill: var(--ls-accent);
+}
+
+.hubText {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 600;
+    fill: var(--ls-white);
+}

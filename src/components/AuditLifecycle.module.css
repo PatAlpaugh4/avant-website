@@ -1,0 +1,109 @@
+.wrap {
+    margin-top: 0;
+}
+
+.caption {
+    text-align: center;
+    color: var(--ls-ivory-muted);
+    font-size: var(--fs-body);
+    max-width: 52ch;
+    margin: 0 auto var(--space-lg);
+}
+
+.svg {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.arcLabel {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    fill: var(--ls-white);
+}
+
+.hub {
+    fill: var(--ls-charcoal-light);
+    stroke: var(--glass-border);
+    stroke-width: 1;
+}
+
+.hubText {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 700;
+    fill: var(--ls-white);
+}
+
+.hubSub {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    fill: var(--ls-ivory-muted);
+}
+
+/* Per-stage AI applications */
+.stages {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+}
+
+.stageName {
+    font-family: var(--font-display);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.03em;
+    color: var(--ls-accent);
+    margin-bottom: var(--space-sm);
+    padding-bottom: var(--space-xs);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.apps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.apps li {
+    position: relative;
+    padding-left: 0.95rem;
+    color: var(--ls-ivory-muted);
+    font-size: var(--fs-small);
+    line-height: 1.5;
+}
+
+.apps li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--ls-accent);
+}
+
+@media (max-width: 860px) {
+    .stages {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+}
+
+@media (max-width: 520px) {
+    .stages {
+        grid-template-columns: 1fr;
+    }
+}

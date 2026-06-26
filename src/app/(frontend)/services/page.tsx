@@ -1,37 +1,72 @@
 import type { Metadata } from "next";
-import Services from "@/components/Services";
+import Link from "next/link";
+import Image from "next/image";
 import RapidAssessment from "@/components/RapidAssessment";
-import { BOOKING_URL } from "@/lib/booking";
+import PageHero from "@/components/PageHero";
+import ScrollReveal from "@/components/ScrollReveal";
+import { mailto } from "@/lib/contact";
+import styles from "./services.module.css";
 
 export const metadata: Metadata = {
-    title: "AI Implementation Services for Canadian PE, VC & Family Offices",
+    title: "AI Audit for PE, VC & Family Offices",
     description:
-        "AI implementation services for Canadian private equity, venture capital, and family offices: rapid AI assessments, 2–4 week implementation sprints, and AI workflow design for deal-team operations.",
+        "A rigorous, fixed-scope AI audit for private equity, venture capital, and family offices — readiness scorecard, tooling and enablement plan, ranked opportunities, and a costed roadmap delivered in a live executive readout. Fee credited toward implementation.",
     alternates: { canonical: '/services' },
 };
 
 export default function ServicesPage() {
     return (
         <>
-            <div style={{ height: "var(--nav-height)" }} />
-            <h1 className="sr-only">AI Implementation Services for Canadian PE, VC &amp; Family Offices</h1>
+            <div className={styles.earthTop}>
+                <div className={styles.earthBg} aria-hidden="true">
+                    <Image
+                        src="/images/earth.jpg"
+                        alt=""
+                        fill
+                        priority
+                        quality={90}
+                        sizes="100vw"
+                        style={{ objectFit: "cover", objectPosition: "center 30%" }}
+                    />
+                    <div className={styles.earthScrim} />
+                </div>
+                <div className={styles.earthContent}>
+            <PageHero
+                label="AI Audit"
+                title="A rigorous AI audit of your investment process."
+            >
+                <a
+                    href={mailto("AI Audit")}
+                    className="btn btn--primary"
+                    style={{ marginTop: "var(--space-lg)" }}
+                >
+                    Scope your audit
+                </a>
+            </PageHero>
             <RapidAssessment />
-            <Services />
+                </div>
+            </div>
             <section className="section" style={{ textAlign: "center" }}>
                 <div className="container">
-                    <h2 className="section-title" style={{ maxWidth: "none" }}>
-                        Not sure where to start?
-                    </h2>
-                    <p
-                        className="section-subtitle"
-                        style={{ margin: "0 auto var(--space-lg)" }}
-                    >
-                        Book an intro call and we&apos;ll recommend the right
-                        starting point for your firm.
-                    </p>
-                    <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
-                        Book Intro Call
-                    </a>
+                    <ScrollReveal>
+                        <h2 className="section-title" style={{ maxWidth: "none" }}>
+                            Not sure which audit fits?
+                        </h2>
+                        <p
+                            className="section-subtitle"
+                            style={{ margin: "0 auto var(--space-lg)" }}
+                        >
+                            Email us a line about your firm and we&apos;ll recommend the
+                            right starting point.
+                        </p>
+                        <a href={mailto("AI Audit — Not sure where to start")} className="btn btn--primary">
+                            Email Us
+                        </a>
+                        <p className="section-subtitle" style={{ margin: "var(--space-lg) auto 0" }}>
+                            Ready to build? The audit fee credits toward any{" "}
+                            <Link href="/software">custom software</Link> we ship for you.
+                        </p>
+                    </ScrollReveal>
                 </div>
             </section>
             <script
@@ -41,7 +76,7 @@ export default function ServicesPage() {
                     "@type": "BreadcrumbList",
                     "itemListElement": [
                         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.avantai.ca" },
-                        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.avantai.ca/services" }
+                        { "@type": "ListItem", "position": 2, "name": "AI Audit", "item": "https://www.avantai.ca/services" }
                     ]
                 }) }}
             />
@@ -56,10 +91,9 @@ export default function ServicesPage() {
                             "position": 1,
                             "item": {
                                 "@type": "Service",
-                                "name": "Rapid AI Assessment",
-                                "description": "A 1-2 week engagement: site visit, structured interviews with key team members, and a written report with three to five ranked AI use cases — each with a scoped build estimate and projected ROI.",
-                                "provider": { "@id": "https://www.avantai.ca/#organization" },
-                                "areaServed": { "@type": "AdministrativeArea", "name": "Canada" }
+                                "name": "AI Audit — Firm Audit",
+                                "description": "A fixed-scope 2-3 week assessment of an investment firm's readiness: a scorecard across data, tooling, talent, process and adoption; a tooling and enablement plan; ranked AI opportunities across the deal lifecycle; and a costed, phased roadmap delivered in a live executive readout. Fee credited toward implementation.",
+                                "provider": { "@id": "https://www.avantai.ca/#organization" }
                             }
                         },
                         {
@@ -67,10 +101,9 @@ export default function ServicesPage() {
                             "position": 2,
                             "item": {
                                 "@type": "Service",
-                                "name": "AI Opportunity Assessment",
-                                "description": "A diagnostic call to identify your top three automation opportunities with estimated ROI.",
-                                "provider": { "@id": "https://www.avantai.ca/#organization" },
-                                "areaServed": { "@type": "AdministrativeArea", "name": "Canada" }
+                                "name": "AI Audit — Portfolio Audit",
+                                "description": "Everything in the Firm Audit plus a portfolio-company AI assessment, a value-creation roadmap across portfolio companies, cross-portfolio benchmarking, and expanded recommendations. For PE firms and family offices with portfolio companies.",
+                                "provider": { "@id": "https://www.avantai.ca/#organization" }
                             }
                         },
                         {
@@ -78,32 +111,9 @@ export default function ServicesPage() {
                             "position": 3,
                             "item": {
                                 "@type": "Service",
-                                "name": "AI Readiness Session",
-                                "description": "Half-day hands-on session where your team leaves with working AI tools and a personalized AI Action Plan.",
-                                "provider": { "@id": "https://www.avantai.ca/#organization" },
-                                "areaServed": { "@type": "AdministrativeArea", "name": "Canada" }
-                            }
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 4,
-                            "item": {
-                                "@type": "Service",
-                                "name": "AI Implementation Sprints",
-                                "description": "2-4 week focused engagements that solve one specific workflow problem with a 30-day ROI scorecard.",
-                                "provider": { "@id": "https://www.avantai.ca/#organization" },
-                                "areaServed": { "@type": "AdministrativeArea", "name": "Canada" }
-                            }
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 5,
-                            "item": {
-                                "@type": "Service",
-                                "name": "Monthly AI Retainer",
-                                "description": "Fractional Chief AI Officer support with monthly roadmap reviews, performance monitoring, and team training.",
-                                "provider": { "@id": "https://www.avantai.ca/#organization" },
-                                "areaServed": { "@type": "AdministrativeArea", "name": "Canada" }
+                                "name": "Custom AI Implementation",
+                                "description": "Bespoke AI systems and workflows built on your playbook and shipped in 2-4 weeks, deployed inside your own environment.",
+                                "provider": { "@id": "https://www.avantai.ca/#organization" }
                             }
                         }
                     ]
@@ -117,34 +127,34 @@ export default function ServicesPage() {
                     "mainEntity": [
                         {
                             "@type": "Question",
-                            "name": "Do we need technical staff to work with Avant?",
+                            "name": "What does an AI audit include?",
                             "acceptedAnswer": {
                                 "@type": "Answer",
-                                "text": "No. Avant handles all technical implementation. Your team participates in discovery and training, but no technical expertise is required."
+                                "text": "A readiness scorecard across data, tooling, talent, process and adoption, a tooling and enablement plan, ranked AI opportunities across your deal lifecycle, and a costed, phased implementation roadmap delivered in a live executive readout with a written report."
                             }
                         },
                         {
                             "@type": "Question",
-                            "name": "How quickly will we see ROI from AI implementation?",
+                            "name": "How long does the audit take?",
                             "acceptedAnswer": {
                                 "@type": "Answer",
-                                "text": "ROI is typically visible within the first week of an implementation sprint, with measurable 30-day returns tracked via our ROI scorecard."
+                                "text": "Two to three weeks for the Firm Audit and three to four weeks for the Portfolio Audit. The scope is fixed, and every engagement ends with a written report and a live executive readout."
                             }
                         },
                         {
                             "@type": "Question",
-                            "name": "How is Avant different from large consulting firms?",
+                            "name": "Is the audit fee credited toward implementation?",
                             "acceptedAnswer": {
                                 "@type": "Answer",
-                                "text": "Avant uses flat-fee engagements with working systems delivered in weeks, not months. No open-ended retainers or strategy decks — just deployed AI tools integrated into your workflows."
+                                "text": "Yes. The full audit fee is credited toward any implementation you commission afterward — you are paying down your build, not buying a report."
                             }
                         },
                         {
                             "@type": "Question",
-                            "name": "Can AI integrate with our existing software?",
+                            "name": "Is our data secure during the audit?",
                             "acceptedAnswer": {
                                 "@type": "Answer",
-                                "text": "Yes. Avant integrates with platforms like HubSpot, Salesforce, Pipedrive, QuickBooks, Google Workspace, and more."
+                                "text": "Every engagement runs inside your environment. No documents are uploaded to third parties and no data leaves your systems."
                             }
                         }
                     ]

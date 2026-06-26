@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Team from "@/components/Team";
 
 export const metadata: Metadata = {
-    title: "About Avant — AI Implementation for Canadian PE, VC & Family Offices",
+    title: "About Avant — AI Implementation for PE, VC & Family Offices",
     description:
-        "Meet Patrick Alpaugh, Founder & CEO of Avant — an AI implementation consultant for Canadian private equity, venture capital, and family offices. Our approach, process, and what makes us different from big consulting firms.",
+        "Meet Patrick Alpaugh, Founder & CEO of Avant — an AI implementation consultant for private equity, venture capital, and family offices. Our approach, process, and what makes us different from big consulting firms.",
     alternates: { canonical: '/about' },
 };
 
@@ -35,7 +35,7 @@ export default function AboutPage() {
                         "familyName": "Alpaugh",
                         "honorificSuffix": "MBA",
                         "jobTitle": "Founder & CEO",
-                        "description": "Founder and CEO of Avant, an AI implementation consultancy for Canadian private equity, venture capital, and family offices. Former analyst at Massey Capital (Canadian PE) and Redstick Ventures (VC); led the Canadian rollout of Nomad Go's Spatial AI inventory product to the country's largest restaurant brands before founding Avant.",
+                        "description": "Founder and CEO of Avant, an AI implementation consultancy for private equity, venture capital, and family offices. Former analyst at Massey Capital (PE) and Redstick Ventures (VC); led the rollout of Nomad Go's Spatial AI inventory product to the country's largest restaurant brands before founding Avant.",
                         "image": "https://www.avantai.ca/images/team/patrick_headshot.jpeg",
                         "worksFor": { "@type": "Organization", "@id": "https://www.avantai.ca/#organization" },
                         "alumniOf": [
@@ -71,7 +71,6 @@ export default function AboutPage() {
                             "Spatial AI"
                         ],
                         "knowsLanguage": "en",
-                        "nationality": { "@type": "Country", "name": "Canada" },
                         "sameAs": ["https://www.linkedin.com/in/patrick-alpaugh/"]
                     }
                 ]) }}

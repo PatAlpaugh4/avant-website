@@ -35,17 +35,13 @@ export default function FrontendLayout({
                         "url": "https://www.avantai.ca",
                         "logo": "https://www.avantai.ca/images/og-default.png",
                         "image": "https://www.avantai.ca/images/og-default.png",
-                        "description": "Avant is an AI implementation consultancy for Canadian private equity, venture capital, and family offices. We design Claude-powered workflows that compress diligence, IC prep, LP reporting, and portfolio monitoring — shipped in 2–4 weeks.",
+                        "description": "Avant turns AI into an edge for private equity, venture capital, and family offices — three ways: a fixed-scope AI audit, fully custom software, and hands-on workshops. Built around how your firm actually works, shipped in weeks, not quarters.",
                         "foundingDate": "2026",
                         "founder": {
                             "@type": "Person",
                             "@id": "https://www.avantai.ca/about#patrick",
                             "name": "Patrick Alpaugh"
                         },
-                        "areaServed": [
-                            { "@type": "Country", "name": "Canada" },
-                            { "@type": "AdministrativeArea", "name": "Ontario" }
-                        ],
                         "address": {
                             "@type": "PostalAddress",
                             "addressLocality": "London",
@@ -67,10 +63,9 @@ export default function FrontendLayout({
                             "Contract analytics"
                         ],
                         "serviceType": [
-                            "Rapid AI Assessment",
-                            "AI Implementation Sprint",
-                            "Custom CRM Development",
-                            "Monthly AI Retainer"
+                            "AI Audit",
+                            "Custom Software Development",
+                            "AI Enablement Workshops"
                         ],
                         "sameAs": [
                             "https://www.linkedin.com/in/patrick-alpaugh/",
@@ -83,7 +78,7 @@ export default function FrontendLayout({
                         "@id": "https://www.avantai.ca/#website",
                         "name": "Avant",
                         "url": "https://www.avantai.ca",
-                        "inLanguage": "en-CA",
+                        "inLanguage": "en",
                         "publisher": { "@id": "https://www.avantai.ca/#organization" }
                     }
                 ]) }}

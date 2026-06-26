@@ -1,0 +1,104 @@
+.actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin-top: var(--space-lg);
+}
+
+/* ── Differentiators — editorial rows ── */
+.diffRows {
+    margin-top: var(--space-lg);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.diffRow {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+    padding: var(--space-lg) 0;
+    border-top: 1px solid var(--glass-border);
+}
+
+.diffIndex {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+    font-weight: var(--fw-light);
+    line-height: 1;
+    color: var(--ls-accent);
+    opacity: 0.5;
+    font-variant-numeric: tabular-nums;
+}
+
+.diffTitle {
+    font-size: var(--fs-h3);
+    margin-bottom: var(--space-xs);
+}
+
+.diffBody {
+    color: var(--ls-ivory-muted);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 62ch;
+}
+
+/* ── Value creation ── */
+.valueGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+    margin-top: 0;
+}
+
+.levers {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.lever {
+    padding: var(--space-sm) var(--space-lg);
+    border-left: 2px solid var(--glass-border);
+}
+
+.leverActive {
+    border-left: 2px solid var(--ls-accent);
+    background: linear-gradient(90deg, rgba(74, 144, 217, 0.08), transparent);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+}
+
+.leverName {
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    margin-bottom: var(--space-xs);
+}
+
+.leverActive .leverName {
+    color: var(--ls-accent);
+}
+
+.leverBody {
+    color: var(--ls-ivory-muted);
+    line-height: 1.6;
+    margin: 0;
+    font-size: var(--fs-small);
+}
+
+.source {
+    display: inline-block;
+    margin-top: var(--space-sm);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.04em;
+    color: var(--ls-slate);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .valueGrid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+}
