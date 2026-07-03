@@ -34,3 +34,12 @@
     position: relative;
     z-index: 1;
 }
+
+/* Phones: the desktop clamp minimum (1240px) is disproportionately tall for
+   stacked mobile content — shrink so the mask fade lands after the lifecycle */
+@media (max-width: 768px) {
+    .earthBg {
+        height: clamp(880px, 165vh, 1240px); /* fallback for browsers without svh */
+        height: clamp(880px, 165svh, 1240px);
+    }
+}

@@ -17,6 +17,13 @@
     border-bottom: 1px solid var(--glass-border);
 }
 
+/* Solid surface while the mobile menu is open — the bar and the menu read
+   as one seamless panel even on pages where the nav is transparent at top */
+.navOpen {
+    background: var(--ls-charcoal);
+    transition: none;
+}
+
 /* Home page — a solid dark bar behind the nav over the hero */
 .home {
     background: rgba(18, 18, 22, 0.92);
@@ -80,8 +87,10 @@
     color: var(--ls-white);
 }
 
-.link:hover::after {
-    width: 100%;
+@media (hover: hover) {
+    .link:hover::after {
+        width: 100%;
+    }
 }
 
 .linkActive {
@@ -109,23 +118,31 @@
     transition: all var(--duration-fast) var(--ease-out);
 }
 
-.cta:hover {
-    color: var(--ls-white);
-    border-color: var(--ls-accent);
-    background: rgba(74, 144, 217, 0.18);
-    transform: translateY(-1px);
+@media (hover: hover) {
+    .cta:hover {
+        color: var(--ls-white);
+        border-color: var(--ls-accent);
+        background: rgba(74, 144, 217, 0.18);
+        transform: translateY(-1px);
+    }
 }
 
-/* Hamburger */
+/* Hamburger — 44x44 tap target; the negative margin keeps the 24px glyph
+   visually flush with the container edge */
 .burger {
     justify-self: end;
     display: none;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 5px;
+    width: 44px;
+    height: 44px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 4px;
+    padding: 0;
+    margin-right: -10px;
 }
 
 .burger span {
@@ -160,24 +177,96 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: var(--space-lg);
+    gap: var(--space-xs);
+    padding: var(--space-lg) var(--space-md);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     z-index: 99;
-    animation: fadeIn var(--duration-fast) var(--ease-out);
+    animation: navMenuIn var(--duration-fast) var(--ease-out);
+}
+
+/* Center when content fits; scroll from the top when it doesn't —
+   plain justify-content: center clips the top of overflowing flex content */
+.mobileMenu > :first-child {
+    margin-top: auto;
+}
+
+.mobileMenu > :last-child {
+    margin-bottom: auto;
 }
 
 .mobileLink {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.85rem var(--space-sm);
     font-family: var(--font-display);
-    font-size: var(--fs-h3);
-    font-weight: var(--fw-medium);
+    font-size: clamp(1.6rem, 5.5vw, 2rem);
+    font-weight: var(--fw-light);
     letter-spacing: var(--ls-wide);
     text-transform: uppercase;
     color: var(--ls-ivory);
     text-decoration: none;
+    opacity: 0;
+    animation: navItemIn 0.4s var(--ease-out) forwards;
 }
 
 .mobileLink:hover {
     color: var(--ls-accent);
+}
+
+.mobileLinkActive {
+    color: var(--ls-accent);
+}
+
+.mobileCta {
+    width: 100%;
+    max-width: 360px;
+    margin-top: var(--space-md);
+    opacity: 0;
+    animation: navItemIn 0.4s var(--ease-out) forwards;
+}
+
+/* Staggered entrance (4 links + CTA); extra children just get 0ms delay */
+.mobileMenu > :nth-child(1) { animation-delay: 50ms; }
+.mobileMenu > :nth-child(2) { animation-delay: 100ms; }
+.mobileMenu > :nth-child(3) { animation-delay: 150ms; }
+.mobileMenu > :nth-child(4) { animation-delay: 200ms; }
+.mobileMenu > :nth-child(5) { animation-delay: 250ms; }
+
+/* Local keyframes — a global keyframe name gets scoped to a nonexistent
+   local name here (see PageHero.module.css) */
+@keyframes navMenuIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes navItemIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mobileMenu,
+    .mobileLink,
+    .mobileCta {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+/* If the window is widened past the flip while the menu is open, the burger
+   disappears — hide the menu too rather than strand an uncloseable overlay */
+@media (min-width: 941px) {
+    .mobileMenu {
+        display: none;
+    }
 }
 
 @media (max-width: 940px) {

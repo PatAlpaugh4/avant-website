@@ -56,10 +56,16 @@
         box-shadow var(--duration-fast) var(--ease-out);
 }
 
-.card:hover {
-    border-color: rgba(74, 144, 217, 0.35);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-accent);
+@media (hover: hover) {
+    .card:hover {
+        border-color: rgba(74, 144, 217, 0.35);
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-accent);
+    }
+
+    .card:hover .cardCta {
+        color: var(--ls-accent-bright);
+    }
 }
 
 .cardLabel {
@@ -88,10 +94,6 @@
     font-family: var(--font-display);
     font-weight: var(--fw-semibold);
     color: var(--ls-accent);
-}
-
-.card:hover .cardCta {
-    color: var(--ls-accent-bright);
 }
 
 @media (max-width: 900px) {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.css";
@@ -16,6 +16,7 @@ const NAV_LINKS = [
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const burgerRef = useRef<HTMLButtonElement>(null);
     const pathname = usePathname();
     const isHome = pathname === "/";
 
@@ -30,21 +31,50 @@ export default function Navbar() {
         setMenuOpen(false);
     }, [pathname]);
 
-    // Prevent scrolling when menu is open
+    // Prevent scrolling when menu is open. `overflow: hidden` alone is not
+    // reliable on iOS Safari, so pin the body with position: fixed.
     useEffect(() => {
-        if (menuOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "";
-        }
-
+        if (!menuOpen) return;
+        const scrollY = window.scrollY;
+        const lockedPath = window.location.pathname;
+        const { style } = document.body;
+        style.position = "fixed";
+        style.top = `-${scrollY}px`;
+        style.left = "0";
+        style.right = "0";
+        style.width = "100%";
+        style.overflow = "hidden";
         return () => {
-            document.body.style.overflow = "";
+            style.position = "";
+            style.top = "";
+            style.left = "";
+            style.right = "";
+            style.width = "";
+            style.overflow = "";
+            // Restore only if the menu closed without navigation;
+            // a new page must start at the top.
+            if (window.location.pathname === lockedPath) {
+                window.scrollTo({ top: scrollY, behavior: "instant" });
+            }
+            setScrolled(window.scrollY > 40);
         };
     }, [menuOpen]);
 
+    // Close on Escape, returning focus to the toggle
+    useEffect(() => {
+        if (!menuOpen) return;
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === "Escape") {
+                setMenuOpen(false);
+                burgerRef.current?.focus();
+            }
+        };
+        window.addEventListener("keydown", onKey);
+        return () => window.removeEventListener("keydown", onKey);
+    }, [menuOpen]);
+
     return (
-        <nav className={`${styles.nav} ${scrolled ? styles.scrolled : isHome ? styles.home : ""}`}>
+        <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : scrolled ? styles.scrolled : isHome ? styles.home : ""}`}>
             <div className={`container ${styles.inner}`}>
                 <Link href="/" className={styles.logo}>
                     AVANT
@@ -70,9 +100,12 @@ export default function Navbar() {
 
                 {/* Mobile hamburger */}
                 <button
+                    ref={burgerRef}
                     className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
                     onClick={() => setMenuOpen(!menuOpen)}
-                    aria-label="Toggle menu"
+                    aria-label={menuOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={menuOpen}
+                    aria-controls="mobile-menu"
                 >
                     <span />
                     <span />
@@ -82,12 +115,12 @@ export default function Navbar() {
 
             {/* Mobile menu */}
             {menuOpen && (
-                <div className={styles.mobileMenu}>
+                <div id="mobile-menu" className={styles.mobileMenu}>
                     {NAV_LINKS.map((l) => (
                         <Link
                             key={l.href}
                             href={l.href}
-                            className={styles.mobileLink}
+                            className={`${styles.mobileLink} ${pathname === l.href || pathname.startsWith(l.href + "/") ? styles.mobileLinkActive : ""}`}
                             onClick={() => setMenuOpen(false)}
                         >
                             {l.label}
@@ -95,9 +128,8 @@ export default function Navbar() {
                     ))}
                     <a
                         href={mailto()}
-                        className="btn btn--primary"
+                        className={`btn btn--primary ${styles.mobileCta}`}
                         onClick={() => setMenuOpen(false)}
-                        style={{ marginTop: "1rem", width: "100%" }}
                     >
                         Contact
                     </a>

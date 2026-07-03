@@ -62,13 +62,19 @@
     transition: opacity var(--duration-medium) var(--ease-out);
 }
 
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
+@media (hover: hover) {
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
 
-.card:hover::before {
-    opacity: 1;
+    .card:hover::before {
+        opacity: 1;
+    }
+
+    .card:hover .arrow {
+        transform: translateX(4px);
+    }
 }
 
 .industry {
@@ -101,10 +107,6 @@
     font-size: var(--fs-small);
     color: var(--ls-accent);
     transition: transform var(--duration-fast) var(--ease-out);
-}
-
-.card:hover .arrow {
-    transform: translateX(4px);
 }
 
 .cta {

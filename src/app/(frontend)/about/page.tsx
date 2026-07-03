@@ -11,6 +11,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
     return (
         <>
+            {/* Clear the fixed navbar */}
+            <div style={{ height: "var(--nav-height)" }} />
             <Team />
             <script
                 type="application/ld+json"

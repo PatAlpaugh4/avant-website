@@ -3,7 +3,9 @@
 import { SceneReadyProvider } from "@/components/SceneReadyContext";
 import LoadingScreen from "@/components/LoadingScreen";
 
-const SCENE_IDS = ["globe", "orbital", "datastream", "blob"];
+// Only the scenes that actually mount on the homepage — a stray id here
+// forces the loading screen to always wait out the full timeout
+const SCENE_IDS = ["globe", "datastream"];
 
 export default function HomeShell({
     children,
@@ -11,7 +13,7 @@ export default function HomeShell({
     children: React.ReactNode;
 }) {
     return (
-        <SceneReadyProvider sceneIds={SCENE_IDS} timeout={2000}>
+        <SceneReadyProvider sceneIds={SCENE_IDS} timeout={1200}>
             <LoadingScreen />
             {children}
         </SceneReadyProvider>

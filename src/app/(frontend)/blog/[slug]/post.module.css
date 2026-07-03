@@ -150,6 +150,16 @@
     padding: 0;
 }
 
+/* CMS tables can't be wrapped in a scroll container — scroll the table itself */
+.content table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-collapse: collapse;
+    margin: var(--space-lg) 0;
+}
+
 /* Footer CTAs */
 .footer {
     display: flex;

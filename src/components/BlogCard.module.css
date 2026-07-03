@@ -7,8 +7,10 @@
     padding: 0;
 }
 
-.card:hover .image {
-    transform: scale(1.05);
+@media (hover: hover) {
+    .card:hover .image {
+        transform: scale(1.05);
+    }
 }
 
 .imageWrap {
@@ -56,7 +58,7 @@
 .meta {
     display: flex;
     gap: var(--space-sm);
-    font-size: var(--fs-xs);
+    font-size: var(--fs-small);
     color: var(--ls-slate);
     margin-top: auto;
 }

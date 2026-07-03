@@ -22,10 +22,12 @@
         transform var(--duration-fast) var(--ease-out);
 }
 
-.deliverable:hover {
-    border-color: rgba(74, 144, 217, 0.25);
-    border-top-color: var(--ls-accent);
-    transform: translateY(-4px);
+@media (hover: hover) {
+    .deliverable:hover {
+        border-color: rgba(74, 144, 217, 0.25);
+        border-top-color: var(--ls-accent);
+        transform: translateY(-4px);
+    }
 }
 
 .delHead {

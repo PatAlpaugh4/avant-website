@@ -4,7 +4,8 @@
 
 .heroWrapper {
     width: 100%;
-    min-height: 95vh;
+    min-height: 95vh; /* fallback for browsers without svh */
+    min-height: 95svh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -126,9 +127,11 @@
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
-.btnPrimary:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+@media (hover: hover) {
+    .btnPrimary:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
 }
 
 .btnSecondary {
@@ -144,9 +147,11 @@
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btnSecondary:hover {
-    border-color: var(--ls-ivory-muted);
-    background: rgba(255, 255, 255, 0.02);
+@media (hover: hover) {
+    .btnSecondary:hover {
+        border-color: var(--ls-ivory-muted);
+        background: rgba(255, 255, 255, 0.02);
+    }
 }
 
 @keyframes fadeUp {

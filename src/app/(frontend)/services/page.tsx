@@ -24,7 +24,7 @@ export default function ServicesPage() {
                         alt=""
                         fill
                         priority
-                        quality={90}
+                        quality={75}
                         sizes="100vw"
                         style={{ objectFit: "cover", objectPosition: "center 30%" }}
                     />

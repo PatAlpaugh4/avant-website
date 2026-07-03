@@ -38,6 +38,9 @@ export default function OrbitalNetwork() {
             return;
         }
 
+        // Render a single static frame instead of animating
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
         const width = container.clientWidth;
         const height = container.clientHeight;
         const isMobile = window.innerWidth < 768;
@@ -230,29 +233,16 @@ export default function OrbitalNetwork() {
         };
         window.addEventListener("mousemove", onMouseMove);
 
-        /* ── Visibility ── */
-        let isVisible = true;
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                isVisible = entry.isIntersecting;
-            },
-            { threshold: 0 }
-        );
-        observer.observe(container);
-
-        /* ── Animation ── */
+        /* ── Animation — scheduled only while the canvas is on screen ── */
         let time = 0;
+        let running = false;
         const CYCLE = Math.PI * 20;
 
         const animate = () => {
-            frameRef.current = requestAnimationFrame(animate);
-
             if (!readyRef.current) {
                 readyRef.current = true;
                 markReady("orbital");
             }
-
-            if (!isVisible) return;
 
             time = (time + 0.002) % CYCLE;
 
@@ -410,6 +400,37 @@ export default function OrbitalNetwork() {
 
             renderer.render(scene, camera);
         };
+
+        const loop = () => {
+            if (!running) return;
+            frameRef.current = requestAnimationFrame(loop);
+            animate();
+        };
+
+        const startLoop = () => {
+            if (running || reducedMotion) return;
+            running = true;
+            frameRef.current = requestAnimationFrame(loop);
+        };
+
+        const stopLoop = () => {
+            if (!running) return;
+            running = false;
+            cancelAnimationFrame(frameRef.current);
+        };
+
+        /* ── Visibility: pause the loop entirely while off screen ── */
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) startLoop();
+                else stopLoop();
+            },
+            { threshold: 0 }
+        );
+        observer.observe(container);
+
+        // First frame + scene-ready immediately, even when mounted offscreen;
+        // the observer's guaranteed initial callback then starts the loop.
         animate();
 
         /* ── Resize ── */
@@ -424,7 +445,7 @@ export default function OrbitalNetwork() {
 
         /* ── Cleanup ── */
         return () => {
-            cancelAnimationFrame(frameRef.current);
+            stopLoop();
             observer.disconnect();
             window.removeEventListener("resize", onResize);
             window.removeEventListener("mousemove", onMouseMove);

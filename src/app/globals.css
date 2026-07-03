@@ -100,6 +100,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-height);
+  /* Whole-card links flash the default gray highlight on tap otherwise */
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -225,10 +227,13 @@ a:hover {
   color: var(--ls-charcoal);
 }
 
-.btn--primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-accent);
-  color: var(--ls-charcoal);
+/* Lift/shadow hovers stick after a tap on touch screens — mouse only */
+@media (hover: hover) {
+  .btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-accent);
+    color: var(--ls-charcoal);
+  }
 }
 
 .btn--secondary {
@@ -252,10 +257,23 @@ a:hover {
   transition: all var(--duration-normal) var(--ease-out);
 }
 
-.card:hover {
-  border-color: rgba(74, 144, 217, 0.2);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+@media (hover: hover) {
+  .card:hover {
+    border-color: rgba(74, 144, 217, 0.2);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+/* Touch feedback in place of hover — animated by the existing transitions */
+@media (hover: none) {
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  .card:active {
+    border-color: rgba(74, 144, 217, 0.2);
+  }
 }
 
 /* ---------- GLASSMORPHISM ---------- */
